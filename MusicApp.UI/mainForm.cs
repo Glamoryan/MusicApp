@@ -20,7 +20,7 @@ namespace MusicApp.UI
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            pnlMain.Controls.Add(new UserMainControl());
+            
         }
     }
 }
