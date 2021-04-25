@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\MusicApp.Core\MusicApp.Core.csproj" />
+    <ProjectReference Include="..\MusicApp.Entities\MusicApp.Entities.csproj" />
   </ItemGroup>
 
 </Project>
