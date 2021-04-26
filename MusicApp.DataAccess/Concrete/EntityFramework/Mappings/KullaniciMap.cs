@@ -14,6 +14,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework.Mappings
             HasKey(x => x.kullaniciId);
 
             Property(x => x.kullaniciId).HasColumnName("id");
+            Property(x => x.rolId).HasColumnName("rolId");
             Property(x => x.kullaniciAdi).HasColumnName("kullaniciAdi");
             Property(x => x.kullaniciMail).HasColumnName("kullaniciMail");
             Property(x => x.kullaniciSifre).HasColumnName("kullaniciSifre");

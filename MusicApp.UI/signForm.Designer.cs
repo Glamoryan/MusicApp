@@ -1,15 +1,15 @@
 ﻿
 namespace MusicApp.UI
 {
-    partial class mainForm
+    partial class signForm
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -24,41 +24,39 @@ namespace MusicApp.UI
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlAuthMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // pnlMain
+            // pnlAuthMain
             // 
-            this.pnlMain.Location = new System.Drawing.Point(2, 3);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1360, 732);
-            this.pnlMain.TabIndex = 0;
+            this.pnlAuthMain.Location = new System.Drawing.Point(12, 12);
+            this.pnlAuthMain.Name = "pnlAuthMain";
+            this.pnlAuthMain.Size = new System.Drawing.Size(320, 457);
+            this.pnlAuthMain.TabIndex = 0;
             // 
-            // mainForm
+            // signForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 736);
-            this.Controls.Add(this.pnlMain);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(34)))));
+            this.ClientSize = new System.Drawing.Size(344, 481);
+            this.Controls.Add(this.pnlAuthMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "mainForm";
+            this.Name = "signForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Müzik Dosyam";
-            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.Text = "Music App";
+            this.Load += new System.EventHandler(this.signForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlAuthMain;
     }
 }
-
