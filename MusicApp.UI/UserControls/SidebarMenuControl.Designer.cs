@@ -29,19 +29,82 @@ namespace MusicApp.UI.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblKullaniciAdi = new System.Windows.Forms.Label();
+            this.btnCalmaListesi = new System.Windows.Forms.Button();
+            this.btnAnasayfa = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 599);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Kullanıcı :";
+            // 
+            // lblKullaniciAdi
+            // 
+            this.lblKullaniciAdi.AutoSize = true;
+            this.lblKullaniciAdi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblKullaniciAdi.ForeColor = System.Drawing.Color.White;
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(114, 599);
+            this.lblKullaniciAdi.Name = "lblKullaniciAdi";
+            this.lblKullaniciAdi.Size = new System.Drawing.Size(21, 30);
+            this.lblKullaniciAdi.TabIndex = 0;
+            this.lblKullaniciAdi.Text = "-";
+            // 
+            // btnCalmaListesi
+            // 
+            this.btnCalmaListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalmaListesi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCalmaListesi.ForeColor = System.Drawing.Color.White;
+            this.btnCalmaListesi.Location = new System.Drawing.Point(16, 141);
+            this.btnCalmaListesi.Name = "btnCalmaListesi";
+            this.btnCalmaListesi.Size = new System.Drawing.Size(211, 45);
+            this.btnCalmaListesi.TabIndex = 1;
+            this.btnCalmaListesi.Text = "Çalma Listeleri";
+            this.btnCalmaListesi.UseVisualStyleBackColor = true;
+            this.btnCalmaListesi.Click += new System.EventHandler(this.btnCalmaListesi_Click);
+            // 
+            // btnAnasayfa
+            // 
+            this.btnAnasayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAnasayfa.ForeColor = System.Drawing.Color.White;
+            this.btnAnasayfa.Location = new System.Drawing.Point(16, 74);
+            this.btnAnasayfa.Name = "btnAnasayfa";
+            this.btnAnasayfa.Size = new System.Drawing.Size(211, 45);
+            this.btnAnasayfa.TabIndex = 1;
+            this.btnAnasayfa.Text = "Anasayfa";
+            this.btnAnasayfa.UseVisualStyleBackColor = true;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // SidebarMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.btnAnasayfa);
+            this.Controls.Add(this.btnCalmaListesi);
+            this.Controls.Add(this.lblKullaniciAdi);
+            this.Controls.Add(this.label1);
             this.Name = "SidebarMenuControl";
             this.Size = new System.Drawing.Size(246, 648);
+            this.Load += new System.EventHandler(this.SidebarMenuControl_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblKullaniciAdi;
+        private System.Windows.Forms.Button btnCalmaListesi;
+        private System.Windows.Forms.Button btnAnasayfa;
     }
 }
