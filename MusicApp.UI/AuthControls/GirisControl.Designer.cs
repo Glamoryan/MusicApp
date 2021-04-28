@@ -99,6 +99,7 @@ namespace MusicApp.UI.AuthControls
             this.btnGiris.TabIndex = 3;
             this.btnGiris.Text = "Giriş";
             this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // GirisControl
             // 
@@ -122,9 +123,9 @@ namespace MusicApp.UI.AuthControls
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxKullaniciAdi;
-        private System.Windows.Forms.TextBox tbxSifre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGiris;
+        public System.Windows.Forms.TextBox tbxKullaniciAdi;
+        public System.Windows.Forms.TextBox tbxSifre;
     }
 }

@@ -12,7 +12,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework
         public MusicAppContext()
         {
             Database.SetInitializer<MusicAppContext>(null); //Veritabanı bulunamazsa yeni veritabanı oluşturmasını engelliyoruz
-            AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\App_Data");
+            //AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\App_Data");
         }
 
         public DbSet<Abone> Aboneler { get; set; }
@@ -39,8 +39,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new SarkiMap());
             modelBuilder.Configurations.Add(new TurMap());
 
-            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("date"));
-            modelBuilder.Properties<byte>().Configure(c => c.HasColumnType("bit"));
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("date"));            
         }
     }
 }

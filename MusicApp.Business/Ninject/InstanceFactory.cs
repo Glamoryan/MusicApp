@@ -2,7 +2,7 @@
 
 namespace MusicApp.Business.Ninject
 {
-    class InstanceFactory
+    public class InstanceFactory
     {
         public static T GetInstance<T>()
         {

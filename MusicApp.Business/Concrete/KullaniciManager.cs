@@ -27,6 +27,11 @@ namespace MusicApp.Business.Concrete
             return _kullaniciDal.Update(kullanici);
         }
 
+        public Kullanici KullaniciLogin(string kullaniciAdi, string sifre)
+        {
+            return _kullaniciDal.Get(x => x.kullaniciAdi.Equals(kullaniciAdi) & x.kullaniciSifre.Equals(sifre));
+        }
+
         public void KullaniciSil(Kullanici kullanici)
         {
             _kullaniciDal.Delete(kullanici);
