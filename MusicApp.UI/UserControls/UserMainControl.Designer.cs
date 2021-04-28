@@ -64,6 +64,7 @@ namespace MusicApp.UI.UserControls
             this.Controls.Add(this.pnlSidebar);
             this.Name = "UserMainControl";
             this.Size = new System.Drawing.Size(1358, 732);
+            this.Load += new System.EventHandler(this.UserMainControl_Load);
             this.ResumeLayout(false);
 
         }

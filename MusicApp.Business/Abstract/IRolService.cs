@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MusicApp.Business.Abstract
 {
-    interface IRolService
+    public interface IRolService
     {
         List<Rol> TumRolleriGetir();
         Rol RolGetir(int rolId);

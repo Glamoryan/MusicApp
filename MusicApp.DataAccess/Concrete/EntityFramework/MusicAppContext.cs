@@ -25,6 +25,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework
         public DbSet<Sanatci> Sanatcilar { get; set; }
         public DbSet<Sarki> Sarkilar { get; set; }
         public DbSet<Tur> Turler { get; set; }
+        public DbSet<Rol> Roller { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,6 +39,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new SanatciMap());
             modelBuilder.Configurations.Add(new SarkiMap());
             modelBuilder.Configurations.Add(new TurMap());
+            modelBuilder.Configurations.Add(new RolMap());
 
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("date"));            
         }

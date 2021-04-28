@@ -65,7 +65,7 @@ namespace MusicApp.UI.AuthControls
             this.tbxKullaniciAdi.Location = new System.Drawing.Point(15, 157);
             this.tbxKullaniciAdi.Name = "tbxKullaniciAdi";
             this.tbxKullaniciAdi.Size = new System.Drawing.Size(294, 39);
-            this.tbxKullaniciAdi.TabIndex = 2;
+            this.tbxKullaniciAdi.TabIndex = 1;
             // 
             // tbxSifre
             // 
