@@ -40,7 +40,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new SarkiMap());
             modelBuilder.Configurations.Add(new TurMap());
             modelBuilder.Configurations.Add(new RolMap());
-
+            
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("date"));            
         }
     }

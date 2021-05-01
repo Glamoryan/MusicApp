@@ -10,6 +10,6 @@ namespace MusicApp.Entities.Concrete
         public int aboneId { get; set; }
         public int kullaniciId { get; set; }
         public int abonelikId { get; set; }
-        public byte odendi { get; set; }
+        public bool odendi { get; set; }
     }
 }

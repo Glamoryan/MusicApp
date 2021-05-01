@@ -34,13 +34,14 @@ namespace MusicApp.UI.UserControls
             this.btnCalmaListesi = new System.Windows.Forms.Button();
             this.btnAnasayfa = new System.Windows.Forms.Button();
             this.btnTakipler = new System.Windows.Forms.Button();
+            this.btnKullanicilar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.label1.Location = new System.Drawing.Point(13, 599);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 30);
@@ -97,12 +98,26 @@ namespace MusicApp.UI.UserControls
             this.btnTakipler.UseVisualStyleBackColor = true;
             this.btnTakipler.Click += new System.EventHandler(this.btnCalmaListesi_Click);
             // 
+            // btnKullanicilar
+            // 
+            this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKullanicilar.ForeColor = System.Drawing.Color.White;
+            this.btnKullanicilar.Location = new System.Drawing.Point(16, 268);
+            this.btnKullanicilar.Name = "btnKullanicilar";
+            this.btnKullanicilar.Size = new System.Drawing.Size(211, 45);
+            this.btnKullanicilar.TabIndex = 1;
+            this.btnKullanicilar.Text = "Kullanıcılar";
+            this.btnKullanicilar.UseVisualStyleBackColor = true;
+            this.btnKullanicilar.Click += new System.EventHandler(this.btnCalmaListesi_Click);
+            // 
             // SidebarMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.Controls.Add(this.btnAnasayfa);
+            this.Controls.Add(this.btnKullanicilar);
             this.Controls.Add(this.btnTakipler);
             this.Controls.Add(this.btnCalmaListesi);
             this.Controls.Add(this.lblKullaniciAdi);
@@ -122,5 +137,6 @@ namespace MusicApp.UI.UserControls
         private System.Windows.Forms.Button btnCalmaListesi;
         private System.Windows.Forms.Button btnAnasayfa;
         private System.Windows.Forms.Button btnTakipler;
+        private System.Windows.Forms.Button btnKullanicilar;
     }
 }

@@ -1,7 +1,11 @@
-﻿using MusicApp.UI.AuthControls;
+﻿using MusicApp.Business.Abstract;
+using MusicApp.Business.Ninject;
+using MusicApp.Entities.Concrete;
+using MusicApp.UI.AuthControls;
 using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.UserControls
@@ -12,12 +16,19 @@ namespace MusicApp.UI.UserControls
 
         private CalmaListesiControl calmaListesiControl;
         private AnasayfaControl anasayfaControl;
+
+        private IAboneService _aboneService;
         public SidebarMenuControl()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            _aboneService = InstanceFactory.GetInstance<IAboneService>();
         }
 
-        
+        private bool premiumMu()
+        {
+            Abone abonemiz = _aboneService.AboneyiGetir(LoginManager.etkinKullanici.kullaniciId);
+            return abonemiz.abonelikId == 2 ? true : false;
+        }
 
         private void calmaListesiniGetir()
         {            
@@ -36,6 +47,11 @@ namespace MusicApp.UI.UserControls
 
         private void bilgileriYazdir()
         {
+            if (premiumMu())
+                lblKullaniciAdi.ForeColor = Color.Yellow;
+            else
+                lblKullaniciAdi.ForeColor = Color.White;
+
             lblKullaniciAdi.Text = LoginManager.etkinKullanici.kullaniciAdi;
         }
 
