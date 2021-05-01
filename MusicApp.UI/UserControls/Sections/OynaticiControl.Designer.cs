@@ -43,6 +43,7 @@ namespace MusicApp.UI.UserControls.Sections
             // btnPlay
             // 
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlay.Enabled = false;
             this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Image = global::MusicApp.UI.Properties.Resources.play;
@@ -55,6 +56,7 @@ namespace MusicApp.UI.UserControls.Sections
             // btnOnceki
             // 
             this.btnOnceki.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOnceki.Enabled = false;
             this.btnOnceki.FlatAppearance.BorderSize = 0;
             this.btnOnceki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOnceki.Image = global::MusicApp.UI.Properties.Resources.prev;
@@ -67,6 +69,7 @@ namespace MusicApp.UI.UserControls.Sections
             // btnSonraki
             // 
             this.btnSonraki.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSonraki.Enabled = false;
             this.btnSonraki.FlatAppearance.BorderSize = 0;
             this.btnSonraki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSonraki.Image = global::MusicApp.UI.Properties.Resources.next;

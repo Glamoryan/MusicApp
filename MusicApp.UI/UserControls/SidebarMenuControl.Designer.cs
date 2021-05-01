@@ -155,7 +155,7 @@ namespace MusicApp.UI.UserControls
             this.btnAlbumler.TabIndex = 1;
             this.btnAlbumler.Text = "Albümler";
             this.btnAlbumler.UseVisualStyleBackColor = false;
-            this.btnAlbumler.Click += new System.EventHandler(this.btnKullanicilar_Click);
+            this.btnAlbumler.Click += new System.EventHandler(this.btnAlbumler_Click);
             // 
             // SidebarMenuControl
             // 
