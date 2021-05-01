@@ -62,77 +62,82 @@ namespace MusicApp.UI.UserControls
             // 
             // btnCalmaListesi
             // 
+            this.btnCalmaListesi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnCalmaListesi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalmaListesi.FlatAppearance.BorderSize = 0;
             this.btnCalmaListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalmaListesi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCalmaListesi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnCalmaListesi.ForeColor = System.Drawing.Color.White;
             this.btnCalmaListesi.Location = new System.Drawing.Point(16, 176);
             this.btnCalmaListesi.Name = "btnCalmaListesi";
             this.btnCalmaListesi.Size = new System.Drawing.Size(211, 45);
             this.btnCalmaListesi.TabIndex = 1;
             this.btnCalmaListesi.Text = "Çalma Listeleri";
-            this.btnCalmaListesi.UseVisualStyleBackColor = true;
+            this.btnCalmaListesi.UseVisualStyleBackColor = false;
             this.btnCalmaListesi.Click += new System.EventHandler(this.btnCalmaListesi_Click);
             // 
             // btnAnasayfa
             // 
+            this.btnAnasayfa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnAnasayfa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnasayfa.FlatAppearance.BorderSize = 0;
             this.btnAnasayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAnasayfa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnAnasayfa.ForeColor = System.Drawing.Color.White;
             this.btnAnasayfa.Location = new System.Drawing.Point(16, 74);
             this.btnAnasayfa.Name = "btnAnasayfa";
             this.btnAnasayfa.Size = new System.Drawing.Size(211, 45);
             this.btnAnasayfa.TabIndex = 1;
             this.btnAnasayfa.Text = "Anasayfa";
-            this.btnAnasayfa.UseVisualStyleBackColor = true;
+            this.btnAnasayfa.UseVisualStyleBackColor = false;
             this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // btnTakipler
             // 
+            this.btnTakipler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnTakipler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTakipler.FlatAppearance.BorderSize = 0;
             this.btnTakipler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakipler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTakipler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnTakipler.ForeColor = System.Drawing.Color.White;
             this.btnTakipler.Location = new System.Drawing.Point(16, 227);
             this.btnTakipler.Name = "btnTakipler";
             this.btnTakipler.Size = new System.Drawing.Size(211, 45);
             this.btnTakipler.TabIndex = 1;
             this.btnTakipler.Text = "Takip Ettiklerin";
-            this.btnTakipler.UseVisualStyleBackColor = true;
+            this.btnTakipler.UseVisualStyleBackColor = false;
             this.btnTakipler.Click += new System.EventHandler(this.btnTakipler_Click);
             // 
             // btnKullanicilar
             // 
+            this.btnKullanicilar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnKullanicilar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKullanicilar.FlatAppearance.BorderSize = 0;
             this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnKullanicilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnKullanicilar.ForeColor = System.Drawing.Color.White;
             this.btnKullanicilar.Location = new System.Drawing.Point(16, 278);
             this.btnKullanicilar.Name = "btnKullanicilar";
             this.btnKullanicilar.Size = new System.Drawing.Size(211, 45);
             this.btnKullanicilar.TabIndex = 1;
             this.btnKullanicilar.Text = "Kullanıcılar";
-            this.btnKullanicilar.UseVisualStyleBackColor = true;
+            this.btnKullanicilar.UseVisualStyleBackColor = false;
             this.btnKullanicilar.Click += new System.EventHandler(this.btnKullanicilar_Click);
             // 
             // btnSarkilar
             // 
+            this.btnSarkilar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnSarkilar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSarkilar.FlatAppearance.BorderSize = 0;
             this.btnSarkilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSarkilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSarkilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnSarkilar.ForeColor = System.Drawing.Color.White;
             this.btnSarkilar.Location = new System.Drawing.Point(16, 125);
             this.btnSarkilar.Name = "btnSarkilar";
             this.btnSarkilar.Size = new System.Drawing.Size(211, 45);
             this.btnSarkilar.TabIndex = 2;
             this.btnSarkilar.Text = "Şarkılar";
-            this.btnSarkilar.UseVisualStyleBackColor = true;
+            this.btnSarkilar.UseVisualStyleBackColor = false;
             this.btnSarkilar.Click += new System.EventHandler(this.btnSarkilar_Click);
             // 
             // SidebarMenuControl

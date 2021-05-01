@@ -30,7 +30,7 @@ namespace MusicApp.UI.UserControls.Sections
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pnlKullanicilar = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -44,23 +44,23 @@ namespace MusicApp.UI.UserControls.Sections
             this.label1.TabIndex = 0;
             this.label1.Text = "Tüm Kullanıcılar";
             // 
-            // groupBox1
+            // pnlKullanicilar
             // 
-            this.groupBox1.Location = new System.Drawing.Point(42, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1053, 577);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.pnlKullanicilar.Location = new System.Drawing.Point(42, 59);
+            this.pnlKullanicilar.Name = "pnlKullanicilar";
+            this.pnlKullanicilar.Size = new System.Drawing.Size(1053, 575);
+            this.pnlKullanicilar.TabIndex = 1;
             // 
             // KullanicilarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(34)))));
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pnlKullanicilar);
             this.Controls.Add(this.label1);
             this.Name = "KullanicilarControl";
             this.Size = new System.Drawing.Size(1112, 648);
+            this.Load += new System.EventHandler(this.KullanicilarControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,6 +69,6 @@ namespace MusicApp.UI.UserControls.Sections
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel pnlKullanicilar;
     }
 }
