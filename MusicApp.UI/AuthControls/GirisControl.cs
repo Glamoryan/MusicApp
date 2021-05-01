@@ -8,13 +8,15 @@ namespace MusicApp.UI.AuthControls
 {
     public partial class GirisControl : UserControl
     {
-        private IKullaniciService _kullaniciService;        
+        private IKullaniciService _kullaniciService;
+        private IAboneService _aboneService;
 
         public GirisControl()
         {
             InitializeComponent();
 
-            _kullaniciService = InstanceFactory.GetInstance<IKullaniciService>();            
+            _kullaniciService = InstanceFactory.GetInstance<IKullaniciService>();
+            _aboneService = InstanceFactory.GetInstance<IAboneService>();
         }
 
         private void girisYap()
@@ -31,6 +33,7 @@ namespace MusicApp.UI.AuthControls
             else
             {
                 LoginManager.etkinKullanici = kullanici;
+                LoginManager.premiumMu = _aboneService.AboneyiGetir(kullanici.kullaniciId).abonelikId == 1 ? false : true;
 
                 switch (yetkiyiKontrolEt(kullanici))
                 {                    

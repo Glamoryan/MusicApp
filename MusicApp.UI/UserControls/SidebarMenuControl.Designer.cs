@@ -36,6 +36,7 @@ namespace MusicApp.UI.UserControls
             this.btnTakipler = new System.Windows.Forms.Button();
             this.btnKullanicilar = new System.Windows.Forms.Button();
             this.btnSarkilar = new System.Windows.Forms.Button();
+            this.btnAlbumler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -140,6 +141,22 @@ namespace MusicApp.UI.UserControls
             this.btnSarkilar.UseVisualStyleBackColor = false;
             this.btnSarkilar.Click += new System.EventHandler(this.btnSarkilar_Click);
             // 
+            // btnAlbumler
+            // 
+            this.btnAlbumler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnAlbumler.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlbumler.FlatAppearance.BorderSize = 0;
+            this.btnAlbumler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlbumler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAlbumler.ForeColor = System.Drawing.Color.White;
+            this.btnAlbumler.Location = new System.Drawing.Point(16, 329);
+            this.btnAlbumler.Name = "btnAlbumler";
+            this.btnAlbumler.Size = new System.Drawing.Size(211, 45);
+            this.btnAlbumler.TabIndex = 1;
+            this.btnAlbumler.Text = "Albümler";
+            this.btnAlbumler.UseVisualStyleBackColor = false;
+            this.btnAlbumler.Click += new System.EventHandler(this.btnKullanicilar_Click);
+            // 
             // SidebarMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -147,6 +164,7 @@ namespace MusicApp.UI.UserControls
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.Controls.Add(this.btnSarkilar);
             this.Controls.Add(this.btnAnasayfa);
+            this.Controls.Add(this.btnAlbumler);
             this.Controls.Add(this.btnKullanicilar);
             this.Controls.Add(this.btnTakipler);
             this.Controls.Add(this.btnCalmaListesi);
@@ -169,5 +187,6 @@ namespace MusicApp.UI.UserControls
         private System.Windows.Forms.Button btnTakipler;
         private System.Windows.Forms.Button btnKullanicilar;
         private System.Windows.Forms.Button btnSarkilar;
+        private System.Windows.Forms.Button btnAlbumler;
     }
 }

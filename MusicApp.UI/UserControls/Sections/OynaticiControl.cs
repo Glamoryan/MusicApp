@@ -21,7 +21,7 @@ namespace MusicApp.UI.UserControls.Sections
                 suankiForm.Hide();
                 var girisForm = new signForm();
                 girisForm.FormClosed += (s, args) => suankiForm.Close();
-                girisForm.Show();
+                girisForm.Show();                
             }            
         }
 

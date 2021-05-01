@@ -64,7 +64,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblUlkeAdi.AutoSize = true;
             this.lblUlkeAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUlkeAdi.ForeColor = System.Drawing.Color.White;
-            this.lblUlkeAdi.Location = new System.Drawing.Point(725, 16);
+            this.lblUlkeAdi.Location = new System.Drawing.Point(703, 16);
             this.lblUlkeAdi.Name = "lblUlkeAdi";
             this.lblUlkeAdi.Size = new System.Drawing.Size(41, 21);
             this.lblUlkeAdi.TabIndex = 2;
@@ -100,9 +100,9 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnTakip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakip.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTakip.ForeColor = System.Drawing.Color.White;
-            this.btnTakip.Location = new System.Drawing.Point(896, 6);
+            this.btnTakip.Location = new System.Drawing.Point(849, 6);
             this.btnTakip.Name = "btnTakip";
-            this.btnTakip.Size = new System.Drawing.Size(106, 39);
+            this.btnTakip.Size = new System.Drawing.Size(153, 39);
             this.btnTakip.TabIndex = 3;
             this.btnTakip.Text = "Takip Et";
             this.btnTakip.UseVisualStyleBackColor = false;

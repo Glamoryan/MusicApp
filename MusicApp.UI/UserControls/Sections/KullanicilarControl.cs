@@ -1,9 +1,11 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.AuthControls;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.UserControls.Sections
@@ -30,13 +32,22 @@ namespace MusicApp.UI.UserControls.Sections
 
             int sayac = 0;
             foreach (Kullanici kullanici in kullanicilar)
-            {                
+            {
+                if (kullanici.rolId == 2)
+                    continue;
+                string abonelikAdi = _abonelikService.AbonelikGetir(_aboneService.AboneyiGetir(kullanici.kullaniciId).abonelikId).abonelikAdi;                
+
                 _kullaniciItem = new KullaniciItem();
+                _kullaniciItem.lblAbonelikAdi.ForeColor = abonelikAdi == "Premium" ? Color.Yellow : Color.White;
                 _kullaniciItem.Top = (sayac * 60);
                 _kullaniciItem.lblKullaniciAdi.Text = kullanici.kullaniciAdi;
-                _kullaniciItem.lblRolAdi.Text = kullanici.rolId == 1 ? "Kullanıcı" : "Admin";
-                _kullaniciItem.lblAbonelikAdi.Text = _abonelikService.AbonelikGetir(_aboneService.AboneyiGetir(kullanici.kullaniciId).abonelikId).abonelikAdi;
+                _kullaniciItem.lblRolAdi.Text = "Kullanıcı";
+                _kullaniciItem.lblAbonelikAdi.Text = abonelikAdi;
                 _kullaniciItem.lblUlkeAdi.Text = kullanici.ulkeAdi;
+
+                if (abonelikAdi == "Normal" || LoginManager.etkinKullanici.kullaniciId == kullanici.kullaniciId)
+                    _kullaniciItem.btnTakip.Visible = false;
+
                 pnlKullanicilar.Controls.Add(_kullaniciItem);
                 sayac++;
             }

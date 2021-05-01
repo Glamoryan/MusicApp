@@ -11,18 +11,24 @@ namespace MusicApp.UI.UserControls.Sections
 {
     public partial class SarkilarControl : UserControl
     {
-        private ISarkiService _sarkiService;
-
-        private SarkiItem _sarkiItem;
-
         private WindowsMediaPlayer oynatici;
 
-        private Button ilkButton;
+        private ISarkiService _sarkiService;
+        private ISanatciService _sanatciService;
+        private IAlbumDetayService _albumDetayService;
+        private ITurService _turService;
+
+        private SarkiItem _sarkiItem;        
+
+        private Button ilkButton;      
 
         public SarkilarControl()
         {
             InitializeComponent();
             _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
+            _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
+            _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
+            _turService = InstanceFactory.GetInstance<ITurService>();
         }         
 
         private void sarkiyiBaslat(string sarkiYolu, string sarkiAdi, Button sender)
@@ -60,13 +66,15 @@ namespace MusicApp.UI.UserControls.Sections
         private void sarkilariGetir()
         {
             List<Sarki> sarkilar = _sarkiService.TumSarkilariGetir();
-
+            
             int sayac = 0;
             foreach (Sarki sarki in sarkilar)
-            {
+            {                
                 _sarkiItem = new SarkiItem();
                 _sarkiItem.Top = (sayac * 60);
                 _sarkiItem.lblMuzikAdi.Text = sarki.sarkiAdi;
+                _sarkiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi;
+                _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => sarkiyiBaslat(sarki.sarkiYolu, sarki.sarkiAdi, s as Button);
                 pnlSarkilar.Controls.Add(_sarkiItem);
