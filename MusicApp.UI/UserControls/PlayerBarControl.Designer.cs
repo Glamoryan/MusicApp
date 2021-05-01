@@ -38,6 +38,7 @@ namespace MusicApp.UI.UserControls
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(16)))));
             this.Name = "PlayerBarControl";
             this.Size = new System.Drawing.Size(1358, 84);
+            this.Load += new System.EventHandler(this.PlayerBarControl_Load);
             this.ResumeLayout(false);
 
         }

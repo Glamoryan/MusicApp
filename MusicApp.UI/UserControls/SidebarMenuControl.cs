@@ -1,18 +1,15 @@
 ﻿using MusicApp.UI.AuthControls;
+using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.UserControls
 {
     public partial class SidebarMenuControl : UserControl
     {
-        private Panel contentPaneli;
+        private Panel contentPaneli;        
+
         private CalmaListesiControl calmaListesiControl;
         private AnasayfaControl anasayfaControl;
         public SidebarMenuControl()
@@ -20,25 +17,21 @@ namespace MusicApp.UI.UserControls
             InitializeComponent();            
         }
 
-        private void icerikDegistir(Control control)
-        {
-            contentPaneli.Controls.Clear();
-            contentPaneli.Controls.Add(control);
-        }
+        
 
         private void calmaListesiniGetir()
         {            
             if(calmaListesiControl == null)
                 calmaListesiControl = new CalmaListesiControl();
 
-            icerikDegistir(calmaListesiControl);
+            Utilities.icerikDegistir(contentPaneli, calmaListesiControl);            
         }
 
         private void anasayfaGetir()
         {
             if (anasayfaControl == null)
                 anasayfaControl = new AnasayfaControl();
-            icerikDegistir(anasayfaControl);
+            Utilities.icerikDegistir(contentPaneli, anasayfaControl);            
         }
 
         private void bilgileriYazdir()
@@ -48,7 +41,7 @@ namespace MusicApp.UI.UserControls
 
         private void SidebarMenuControl_Load(object sender, EventArgs e)
         {
-            contentPaneli = Parent.Parent.Controls.Find("pnlContent", true)[0] as Panel;
+            contentPaneli = Parent.Parent.Controls.Find("pnlContent", true)[0] as Panel;            
             anasayfaGetir();
             bilgileriYazdir();
         }

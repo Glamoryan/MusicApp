@@ -33,6 +33,7 @@ namespace MusicApp.UI.UserControls
             this.lblKullaniciAdi = new System.Windows.Forms.Label();
             this.btnCalmaListesi = new System.Windows.Forms.Button();
             this.btnAnasayfa = new System.Windows.Forms.Button();
+            this.btnTakipler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,12 +84,26 @@ namespace MusicApp.UI.UserControls
             this.btnAnasayfa.UseVisualStyleBackColor = true;
             this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
+            // btnTakipler
+            // 
+            this.btnTakipler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakipler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTakipler.ForeColor = System.Drawing.Color.White;
+            this.btnTakipler.Location = new System.Drawing.Point(16, 206);
+            this.btnTakipler.Name = "btnTakipler";
+            this.btnTakipler.Size = new System.Drawing.Size(211, 45);
+            this.btnTakipler.TabIndex = 1;
+            this.btnTakipler.Text = "Takip Ettiklerin";
+            this.btnTakipler.UseVisualStyleBackColor = true;
+            this.btnTakipler.Click += new System.EventHandler(this.btnCalmaListesi_Click);
+            // 
             // SidebarMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.Controls.Add(this.btnAnasayfa);
+            this.Controls.Add(this.btnTakipler);
             this.Controls.Add(this.btnCalmaListesi);
             this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.label1);
@@ -106,5 +121,6 @@ namespace MusicApp.UI.UserControls
         private System.Windows.Forms.Label lblKullaniciAdi;
         private System.Windows.Forms.Button btnCalmaListesi;
         private System.Windows.Forms.Button btnAnasayfa;
+        private System.Windows.Forms.Button btnTakipler;
     }
 }
