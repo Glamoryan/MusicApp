@@ -35,7 +35,9 @@ namespace MusicApp.UI.UserControls.Sections
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMuzikAdi = new System.Windows.Forms.Label();
             this.lblSanatciAdi = new System.Windows.Forms.Label();
+            this.pcbxCikis = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxCikis)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPlay
@@ -106,11 +108,24 @@ namespace MusicApp.UI.UserControls.Sections
             this.lblSanatciAdi.TabIndex = 5;
             this.lblSanatciAdi.Text = "Sanatcı Adı";
             // 
+            // pcbxCikis
+            // 
+            this.pcbxCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbxCikis.Image = global::MusicApp.UI.Properties.Resources.signout;
+            this.pcbxCikis.Location = new System.Drawing.Point(1292, 12);
+            this.pcbxCikis.Name = "pcbxCikis";
+            this.pcbxCikis.Size = new System.Drawing.Size(53, 61);
+            this.pcbxCikis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbxCikis.TabIndex = 6;
+            this.pcbxCikis.TabStop = false;
+            this.pcbxCikis.Click += new System.EventHandler(this.pcbxCikis_Click);
+            // 
             // OynaticiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(16)))));
+            this.Controls.Add(this.pcbxCikis);
             this.Controls.Add(this.lblSanatciAdi);
             this.Controls.Add(this.lblMuzikAdi);
             this.Controls.Add(this.pictureBox1);
@@ -120,6 +135,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.Name = "OynaticiControl";
             this.Size = new System.Drawing.Size(1358, 84);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbxCikis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +149,6 @@ namespace MusicApp.UI.UserControls.Sections
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMuzikAdi;
         private System.Windows.Forms.Label lblSanatciAdi;
+        private System.Windows.Forms.PictureBox pcbxCikis;
     }
 }

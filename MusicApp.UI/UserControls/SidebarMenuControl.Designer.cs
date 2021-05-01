@@ -64,7 +64,7 @@ namespace MusicApp.UI.UserControls
             this.btnCalmaListesi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalmaListesi.FlatAppearance.BorderSize = 0;
             this.btnCalmaListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalmaListesi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCalmaListesi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCalmaListesi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnCalmaListesi.Location = new System.Drawing.Point(16, 141);
             this.btnCalmaListesi.Name = "btnCalmaListesi";
@@ -79,7 +79,7 @@ namespace MusicApp.UI.UserControls
             this.btnAnasayfa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnasayfa.FlatAppearance.BorderSize = 0;
             this.btnAnasayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAnasayfa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnAnasayfa.Location = new System.Drawing.Point(16, 74);
             this.btnAnasayfa.Name = "btnAnasayfa";
@@ -94,7 +94,7 @@ namespace MusicApp.UI.UserControls
             this.btnTakipler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTakipler.FlatAppearance.BorderSize = 0;
             this.btnTakipler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTakipler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTakipler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTakipler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnTakipler.Location = new System.Drawing.Point(16, 206);
             this.btnTakipler.Name = "btnTakipler";
@@ -109,7 +109,7 @@ namespace MusicApp.UI.UserControls
             this.btnKullanicilar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKullanicilar.FlatAppearance.BorderSize = 0;
             this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnKullanicilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.btnKullanicilar.Location = new System.Drawing.Point(16, 268);
             this.btnKullanicilar.Name = "btnKullanicilar";
@@ -117,6 +117,7 @@ namespace MusicApp.UI.UserControls
             this.btnKullanicilar.TabIndex = 1;
             this.btnKullanicilar.Text = "Kullanıcılar";
             this.btnKullanicilar.UseVisualStyleBackColor = true;
+            this.btnKullanicilar.Click += new System.EventHandler(this.btnKullanicilar_Click);
             // 
             // SidebarMenuControl
             // 

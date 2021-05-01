@@ -49,7 +49,7 @@ namespace MusicApp.UI.AuthControls
         {
             Form suankiForm = FindForm();
             suankiForm.Hide();
-            var anaForm = new mainForm(adminMi);
+            var anaForm = new mainForm(adminMi);            
             anaForm.FormClosed += (s, args) => suankiForm.Close();
             anaForm.Show();
         }
