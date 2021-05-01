@@ -18,6 +18,7 @@ namespace MusicApp.UI.UserControls
         private AnasayfaControl anasayfaControl;
         private TakiplerControl takiplerControl;
         private KullanicilarControl kullanicilarControl;
+        private SarkilarControl sarkilarControl;
 
         private IAboneService _aboneService;
         public SidebarMenuControl()
@@ -61,6 +62,13 @@ namespace MusicApp.UI.UserControls
             Utilities.icerikDegistir(contentPaneli, kullanicilarControl);
         }
 
+        private void sarkilariGetir()
+        {
+            if (sarkilarControl == null)
+                sarkilarControl = new SarkilarControl();
+            Utilities.icerikDegistir(contentPaneli, sarkilarControl);
+        }
+
         private void bilgileriYazdir()
         {
             if (premiumMu())
@@ -96,6 +104,11 @@ namespace MusicApp.UI.UserControls
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
             kullanicilariGetir();
+        }
+
+        private void btnSarkilar_Click(object sender, EventArgs e)
+        {
+            sarkilariGetir();
         }
     }
 }

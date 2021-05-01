@@ -35,6 +35,7 @@ namespace MusicApp.UI.UserControls
             this.btnAnasayfa = new System.Windows.Forms.Button();
             this.btnTakipler = new System.Windows.Forms.Button();
             this.btnKullanicilar = new System.Windows.Forms.Button();
+            this.btnSarkilar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +67,7 @@ namespace MusicApp.UI.UserControls
             this.btnCalmaListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalmaListesi.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCalmaListesi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
-            this.btnCalmaListesi.Location = new System.Drawing.Point(16, 141);
+            this.btnCalmaListesi.Location = new System.Drawing.Point(16, 176);
             this.btnCalmaListesi.Name = "btnCalmaListesi";
             this.btnCalmaListesi.Size = new System.Drawing.Size(211, 45);
             this.btnCalmaListesi.TabIndex = 1;
@@ -96,7 +97,7 @@ namespace MusicApp.UI.UserControls
             this.btnTakipler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakipler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTakipler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
-            this.btnTakipler.Location = new System.Drawing.Point(16, 206);
+            this.btnTakipler.Location = new System.Drawing.Point(16, 227);
             this.btnTakipler.Name = "btnTakipler";
             this.btnTakipler.Size = new System.Drawing.Size(211, 45);
             this.btnTakipler.TabIndex = 1;
@@ -111,7 +112,7 @@ namespace MusicApp.UI.UserControls
             this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnKullanicilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
-            this.btnKullanicilar.Location = new System.Drawing.Point(16, 268);
+            this.btnKullanicilar.Location = new System.Drawing.Point(16, 278);
             this.btnKullanicilar.Name = "btnKullanicilar";
             this.btnKullanicilar.Size = new System.Drawing.Size(211, 45);
             this.btnKullanicilar.TabIndex = 1;
@@ -119,11 +120,27 @@ namespace MusicApp.UI.UserControls
             this.btnKullanicilar.UseVisualStyleBackColor = true;
             this.btnKullanicilar.Click += new System.EventHandler(this.btnKullanicilar_Click);
             // 
+            // btnSarkilar
+            // 
+            this.btnSarkilar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSarkilar.FlatAppearance.BorderSize = 0;
+            this.btnSarkilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSarkilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSarkilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnSarkilar.Location = new System.Drawing.Point(16, 125);
+            this.btnSarkilar.Name = "btnSarkilar";
+            this.btnSarkilar.Size = new System.Drawing.Size(211, 45);
+            this.btnSarkilar.TabIndex = 2;
+            this.btnSarkilar.Text = "Şarkılar";
+            this.btnSarkilar.UseVisualStyleBackColor = true;
+            this.btnSarkilar.Click += new System.EventHandler(this.btnSarkilar_Click);
+            // 
             // SidebarMenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.Controls.Add(this.btnSarkilar);
             this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.btnKullanicilar);
             this.Controls.Add(this.btnTakipler);
@@ -146,5 +163,6 @@ namespace MusicApp.UI.UserControls
         private System.Windows.Forms.Button btnAnasayfa;
         private System.Windows.Forms.Button btnTakipler;
         private System.Windows.Forms.Button btnKullanicilar;
+        private System.Windows.Forms.Button btnSarkilar;
     }
 }
