@@ -72,7 +72,7 @@ namespace MusicApp.UI.UserControls.Sections
             // 
             this.grbxKlasik.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.grbxKlasik.ForeColor = System.Drawing.Color.White;
-            this.grbxKlasik.Location = new System.Drawing.Point(785, 75);
+            this.grbxKlasik.Location = new System.Drawing.Point(782, 75);
             this.grbxKlasik.Name = "grbxKlasik";
             this.grbxKlasik.Size = new System.Drawing.Size(303, 497);
             this.grbxKlasik.TabIndex = 1;

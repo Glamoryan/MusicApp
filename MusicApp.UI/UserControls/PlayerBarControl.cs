@@ -6,8 +6,7 @@ using System.Windows.Forms;
 namespace MusicApp.UI.UserControls
 {
     public partial class PlayerBarControl : UserControl
-    {
-        private Panel oynaticiPaneli;
+    {        
         private OynaticiControl oynaticiControl;
         public PlayerBarControl()
         {
@@ -18,12 +17,11 @@ namespace MusicApp.UI.UserControls
         {
             if (oynaticiControl == null)
                 oynaticiControl = new OynaticiControl();
-            Utilities.icerikDegistir(oynaticiPaneli, oynaticiControl);
+            Utilities.icerikDegistir(this, oynaticiControl);
         }
 
         private void PlayerBarControl_Load(object sender, EventArgs e)
-        {
-            oynaticiPaneli = Parent.Parent.Controls.Find("pnlPlayer", true)[0] as Panel;
+        {            
             oynaticiyiGetir();
         }
     }

@@ -16,6 +16,7 @@ namespace MusicApp.UI.UserControls
 
         private CalmaListesiControl calmaListesiControl;
         private AnasayfaControl anasayfaControl;
+        private TakiplerControl takiplerControl;
 
         private IAboneService _aboneService;
         public SidebarMenuControl()
@@ -45,6 +46,13 @@ namespace MusicApp.UI.UserControls
             Utilities.icerikDegistir(contentPaneli, anasayfaControl);            
         }
 
+        private void takipleriGetir()
+        {
+            if (takiplerControl == null)
+                takiplerControl = new TakiplerControl();
+            Utilities.icerikDegistir(contentPaneli, takiplerControl);
+        }
+
         private void bilgileriYazdir()
         {
             if (premiumMu())
@@ -70,6 +78,11 @@ namespace MusicApp.UI.UserControls
         private void btnAnasayfa_Click(object sender, EventArgs e)
         {
             anasayfaGetir();
+        }
+
+        private void btnTakipler_Click(object sender, EventArgs e)
+        {
+            takipleriGetir();
         }
     }
 }
