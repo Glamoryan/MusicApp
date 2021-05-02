@@ -200,17 +200,16 @@ namespace MusicApp.UI.UserControls.Sections
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnPlay;
-        private System.Windows.Forms.Button btnOnceki;
-        private System.Windows.Forms.Button btnSonraki;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblMuzikAdi;
-        private System.Windows.Forms.Label lblSanatciAdi;
-        private System.Windows.Forms.PictureBox pcbxCikis;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnSesYukselt;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblSesDuzey;
+        public System.Windows.Forms.Label lblMuzikAdi;
+        public System.Windows.Forms.Label lblSanatciAdi;
+        public System.Windows.Forms.Button btnPlay;
+        public System.Windows.Forms.Button btnOnceki;
+        public System.Windows.Forms.Button btnSonraki;
+        public System.Windows.Forms.Button btnSesYukselt;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lblSesDuzey;
+        public System.Windows.Forms.PictureBox pcbxCikis;
     }
 }
