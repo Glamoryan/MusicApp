@@ -9,6 +9,7 @@ namespace MusicApp.Business.Abstract
     {
         List<KullaniciTakip> TumKullaniciTakipleriniGetir();
         List<KullaniciTakip> KullanicininTakipcileriniGetir(int kullaniciId);
+        List<KullaniciTakip> TakipEttikleriniGetir(int suankiKullaniciId);
         KullaniciTakip KullaniciTakipEkle(KullaniciTakip kullaniciTakip);
         KullaniciTakip KullaniciTakipGuncelle(KullaniciTakip kullaniciTakip);
         void KullaniciTakipSil(KullaniciTakip kullaniciTakip);        

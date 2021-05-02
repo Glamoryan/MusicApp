@@ -32,6 +32,11 @@ namespace MusicApp.Business.Concrete
             _kullaniciTakipDal.Delete(kullaniciTakip);
         }
 
+        public List<KullaniciTakip> TakipEttikleriniGetir(int suankiKullaniciId)
+        {
+            return _kullaniciTakipDal.GetList(x => x.takipciId == suankiKullaniciId);
+        }
+
         public List<KullaniciTakip> TumKullaniciTakipleriniGetir()
         {
             return _kullaniciTakipDal.GetList();
