@@ -38,7 +38,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.pcbxCikis = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSesYukselt = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSesDusur = new System.Windows.Forms.Button();
             this.lblSesDuzey = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxCikis)).BeginInit();
@@ -141,6 +141,7 @@ namespace MusicApp.UI.UserControls.Sections
             // btnSesYukselt
             // 
             this.btnSesYukselt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSesYukselt.Enabled = false;
             this.btnSesYukselt.FlatAppearance.BorderSize = 0;
             this.btnSesYukselt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSesYukselt.Image = global::MusicApp.UI.Properties.Resources.up;
@@ -150,17 +151,18 @@ namespace MusicApp.UI.UserControls.Sections
             this.btnSesYukselt.TabIndex = 8;
             this.btnSesYukselt.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSesDusur
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::MusicApp.UI.Properties.Resources.down;
-            this.button1.Location = new System.Drawing.Point(301, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 31);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSesDusur.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSesDusur.Enabled = false;
+            this.btnSesDusur.FlatAppearance.BorderSize = 0;
+            this.btnSesDusur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSesDusur.Image = global::MusicApp.UI.Properties.Resources.down;
+            this.btnSesDusur.Location = new System.Drawing.Point(301, 41);
+            this.btnSesDusur.Name = "btnSesDusur";
+            this.btnSesDusur.Size = new System.Drawing.Size(51, 31);
+            this.btnSesDusur.TabIndex = 8;
+            this.btnSesDusur.UseVisualStyleBackColor = true;
             // 
             // lblSesDuzey
             // 
@@ -169,9 +171,9 @@ namespace MusicApp.UI.UserControls.Sections
             this.lblSesDuzey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
             this.lblSesDuzey.Location = new System.Drawing.Point(400, 21);
             this.lblSesDuzey.Name = "lblSesDuzey";
-            this.lblSesDuzey.Size = new System.Drawing.Size(49, 37);
+            this.lblSesDuzey.Size = new System.Drawing.Size(28, 37);
             this.lblSesDuzey.TabIndex = 9;
-            this.lblSesDuzey.Text = "20";
+            this.lblSesDuzey.Text = "-";
             // 
             // OynaticiControl
             // 
@@ -179,7 +181,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(16)))));
             this.Controls.Add(this.lblSesDuzey);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSesDusur);
             this.Controls.Add(this.btnSesYukselt);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pcbxCikis);
@@ -208,7 +210,7 @@ namespace MusicApp.UI.UserControls.Sections
         public System.Windows.Forms.Button btnOnceki;
         public System.Windows.Forms.Button btnSonraki;
         public System.Windows.Forms.Button btnSesYukselt;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnSesDusur;
         public System.Windows.Forms.Label lblSesDuzey;
         public System.Windows.Forms.PictureBox pcbxCikis;
     }

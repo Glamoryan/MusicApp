@@ -33,7 +33,21 @@ namespace MusicApp.UI.UserControls.Sections
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
             _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
             _turService = InstanceFactory.GetInstance<ITurService>();
-        }                 
+        }           
+        
+        private void sesYukselt(WindowsMediaPlayer aktifOynatici)
+        {
+            if (aktifOynatici.settings.volume < 100)
+                aktifOynatici.settings.volume = (aktifOynatici.settings.volume + 10);
+            oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
+        }
+
+        private void sesDusur(WindowsMediaPlayer aktifOynatici)
+        {
+            if (aktifOynatici.settings.volume > 0)
+                aktifOynatici.settings.volume = (aktifOynatici.settings.volume - 10);
+            oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
+        }
 
         private void oynaticiyiGuncelle(Sarki calanSarki,byte durum)
         {
@@ -44,19 +58,24 @@ namespace MusicApp.UI.UserControls.Sections
                     oynaticiControl.lblMuzikAdi.Text = calanSarki.sarkiAdi;
                     oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(calanSarki.sanatciId).sanatciAdi;
                     oynaticiControl.btnPlay.Enabled = true;
-                    oynaticiControl.btnPlay.Image = Properties.Resources.pause;                   
+                    oynaticiControl.btnSesYukselt.Enabled = true;
+                    oynaticiControl.btnSesDusur.Enabled = true;                    
+                    oynaticiControl.btnSesYukselt.Click += (s, e) => sesYukselt(oynatici);
+                    oynaticiControl.btnSesDusur.Click += (s, e) => sesDusur(oynatici);
+                    oynaticiControl.btnPlay.Image = Properties.Resources.pause;                    
                     ilkButton.Image = Properties.Resources.pause;
                     oynaticiControl.btnPlay.Click += (s, e) => oynaticiyiAktifEt(calanSarki,s as Button);
                     oynaticiPanel = Parent.Parent.Controls.Find("pnlPlayer", true)[0] as Panel;
-                    Utilities.icerikDegistir(oynaticiPanel, oynaticiControl);
+                    oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
+                    Utilities.icerikDegistir(oynaticiPanel, oynaticiControl);                    
                     break;
                 case 1: //Şarkı çalıyorsa
                     oynaticiControl.btnPlay.Image = Properties.Resources.play;
-                    ilkButton.Image = Properties.Resources.play;
+                    ilkButton.Image = Properties.Resources.play;                    
                     break;
                 case 2: //Şarkı durmuşsa
                     oynaticiControl.btnPlay.Image = Properties.Resources.pause;
-                    ilkButton.Image = Properties.Resources.pause;
+                    ilkButton.Image = Properties.Resources.pause;                    
                     break;
             }                        
         }
