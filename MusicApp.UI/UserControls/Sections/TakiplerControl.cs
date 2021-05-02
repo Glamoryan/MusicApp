@@ -55,6 +55,12 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void TakiplerControl_Load(object sender, EventArgs e)
         {
+            pnlTakipler.AutoScroll = false;
+            pnlTakipler.HorizontalScroll.Enabled = false;
+            pnlTakipler.HorizontalScroll.Visible = false;
+            pnlTakipler.HorizontalScroll.Maximum = 0;
+            pnlTakipler.AutoScroll = true;
+
             takipleriGetir();
         }
     }

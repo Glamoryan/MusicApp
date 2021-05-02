@@ -135,6 +135,12 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void SarkilarControl_Load(object sender, EventArgs e)
         {
+            pnlSarkilar.AutoScroll = false;
+            pnlSarkilar.HorizontalScroll.Enabled = false;
+            pnlSarkilar.HorizontalScroll.Visible = false;
+            pnlSarkilar.HorizontalScroll.Maximum = 0;
+            pnlSarkilar.AutoScroll = true;
+
             sarkilariGetir();
         }
     }
