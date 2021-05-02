@@ -38,7 +38,15 @@ namespace MusicApp.UI.UserControls
         {            
             if(calmaListesiControl == null)
                 calmaListesiControl = new CalmaListesiControl();
-
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("CalmaListesiControl"))
+                {
+                    calmaListesiControl = new CalmaListesiControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, calmaListesiControl);            
         }
 
@@ -46,6 +54,15 @@ namespace MusicApp.UI.UserControls
         {
             if (anasayfaControl == null)
                 anasayfaControl = new AnasayfaControl();
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("AnasayfaControl"))
+                {
+                    anasayfaControl = new AnasayfaControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, anasayfaControl);            
         }
 
@@ -53,6 +70,15 @@ namespace MusicApp.UI.UserControls
         {
             if (takiplerControl == null)
                 takiplerControl = new TakiplerControl();
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("TakiplerControl"))
+                {
+                    takiplerControl = new TakiplerControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, takiplerControl);
         }
 
@@ -60,6 +86,15 @@ namespace MusicApp.UI.UserControls
         {
             if (kullanicilarControl == null)
                 kullanicilarControl = new KullanicilarControl();
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("KullanicilarControl"))
+                {
+                    kullanicilarControl = new KullanicilarControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, kullanicilarControl);
         }
 
@@ -67,6 +102,15 @@ namespace MusicApp.UI.UserControls
         {
             if (sarkilarControl == null)
                 sarkilarControl = new SarkilarControl();
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("SarkilarControl"))
+                {
+                    sarkilarControl = new SarkilarControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, sarkilarControl);
         }
 
@@ -74,6 +118,15 @@ namespace MusicApp.UI.UserControls
         {
             if (albumlerControl == null)
                 albumlerControl = new AlbumlerControl();
+            else
+            {
+                if (contentPaneli.Controls.ContainsKey("AlbumlerControl"))
+                {
+                    albumlerControl = new AlbumlerControl();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+            }
             Utilities.icerikDegistir(contentPaneli, albumlerControl);
         }
 

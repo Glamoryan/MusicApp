@@ -23,8 +23,16 @@ namespace MusicApp.UI.UserControls.Sections
             _kullaniciTakipService = InstanceFactory.GetInstance<IKullaniciTakipService>();
         }
 
+        private void takiptenCik(KullaniciTakip kullaniciTakip)
+        {
+            _kullaniciTakipService.KullaniciTakipSil(kullaniciTakip);
+            MessageBox.Show("Takipten çıkıldı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            takipleriGetir();
+        }
+
         private void takipleriGetir()
         {
+            pnlTakipler.Controls.Clear();
             List<KullaniciTakip> kullaniciTakipleri = _kullaniciTakipService.TakipEttikleriniGetir(LoginManager.etkinKullanici.kullaniciId);
             Kullanici kullanici;
             if (kullaniciTakipleri.Count > 0)
@@ -38,6 +46,7 @@ namespace MusicApp.UI.UserControls.Sections
                     _takipItem.lblKullaniciAdi.Text = kullanici.kullaniciAdi;
                     _takipItem.lblTakipciSayisi.Text = _kullaniciTakipService.KullanicininTakipcileriniGetir(kullaniciTakip.kullaniciId).Count.ToString();
                     _takipItem.lblTakipEdilen.Text = _kullaniciTakipService.TakipEttikleriniGetir(kullaniciTakip.kullaniciId).Count.ToString();
+                    _takipItem.btnTakiptenCik.Click += (s, e) => takiptenCik(kullaniciTakip);
                     pnlTakipler.Controls.Add(_takipItem);
                     sayac++;
                 }

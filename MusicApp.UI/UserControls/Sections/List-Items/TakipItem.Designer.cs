@@ -34,6 +34,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblTakipciSayisi = new System.Windows.Forms.Label();
             this.lblTakipEdilen = new System.Windows.Forms.Label();
             this.btnTumunuEkle = new System.Windows.Forms.Button();
+            this.btnTakiptenCik = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,11 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblTakipciSayisi.AutoSize = true;
             this.lblTakipciSayisi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTakipciSayisi.ForeColor = System.Drawing.Color.White;
-            this.lblTakipciSayisi.Location = new System.Drawing.Point(208, 22);
+            this.lblTakipciSayisi.Location = new System.Drawing.Point(232, 22);
             this.lblTakipciSayisi.Name = "lblTakipciSayisi";
-            this.lblTakipciSayisi.Size = new System.Drawing.Size(100, 21);
+            this.lblTakipciSayisi.Size = new System.Drawing.Size(19, 21);
             this.lblTakipciSayisi.TabIndex = 1;
-            this.lblTakipciSayisi.Text = "Takipçi Sayısı";
+            this.lblTakipciSayisi.Text = "0";
             // 
             // lblTakipEdilen
             // 
@@ -76,36 +77,53 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblTakipEdilen.ForeColor = System.Drawing.Color.White;
             this.lblTakipEdilen.Location = new System.Drawing.Point(338, 22);
             this.lblTakipEdilen.Name = "lblTakipEdilen";
-            this.lblTakipEdilen.Size = new System.Drawing.Size(91, 21);
+            this.lblTakipEdilen.Size = new System.Drawing.Size(19, 21);
             this.lblTakipEdilen.TabIndex = 1;
-            this.lblTakipEdilen.Text = "Takip Edilen";
+            this.lblTakipEdilen.Text = "0";
             // 
             // btnTumunuEkle
             // 
             this.btnTumunuEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnTumunuEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTumunuEkle.FlatAppearance.BorderSize = 0;
             this.btnTumunuEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTumunuEkle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTumunuEkle.ForeColor = System.Drawing.Color.White;
-            this.btnTumunuEkle.Location = new System.Drawing.Point(449, 10);
+            this.btnTumunuEkle.Location = new System.Drawing.Point(407, 10);
             this.btnTumunuEkle.Name = "btnTumunuEkle";
             this.btnTumunuEkle.Size = new System.Drawing.Size(141, 44);
             this.btnTumunuEkle.TabIndex = 2;
             this.btnTumunuEkle.Text = "Tüm Listeyi Ekle";
             this.btnTumunuEkle.UseVisualStyleBackColor = false;
             // 
+            // btnTakiptenCik
+            // 
+            this.btnTakiptenCik.BackColor = System.Drawing.Color.DarkRed;
+            this.btnTakiptenCik.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTakiptenCik.FlatAppearance.BorderSize = 0;
+            this.btnTakiptenCik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakiptenCik.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTakiptenCik.ForeColor = System.Drawing.Color.White;
+            this.btnTakiptenCik.Location = new System.Drawing.Point(554, 10);
+            this.btnTakiptenCik.Name = "btnTakiptenCik";
+            this.btnTakiptenCik.Size = new System.Drawing.Size(69, 44);
+            this.btnTakiptenCik.TabIndex = 2;
+            this.btnTakiptenCik.Text = "X";
+            this.btnTakiptenCik.UseVisualStyleBackColor = false;
+            // 
             // TakipItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btnTakiptenCik);
             this.Controls.Add(this.btnTumunuEkle);
             this.Controls.Add(this.lblTakipEdilen);
             this.Controls.Add(this.lblTakipciSayisi);
             this.Controls.Add(this.lblKullaniciAdi);
             this.Controls.Add(this.pictureBox1);
             this.Name = "TakipItem";
-            this.Size = new System.Drawing.Size(605, 67);
+            this.Size = new System.Drawing.Size(662, 67);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,5 +137,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblTakipciSayisi;
         public System.Windows.Forms.Label lblTakipEdilen;
         public System.Windows.Forms.Button btnTumunuEkle;
+        public System.Windows.Forms.Button btnTakiptenCik;
     }
 }
