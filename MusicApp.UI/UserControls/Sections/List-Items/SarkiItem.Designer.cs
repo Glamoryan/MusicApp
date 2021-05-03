@@ -73,6 +73,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             // 
             // btnOynat
             // 
+            this.btnOynat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOynat.FlatAppearance.BorderSize = 0;
             this.btnOynat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOynat.Image = global::MusicApp.UI.Properties.Resources.play;
@@ -106,6 +107,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             // 
             // btnEkle
             // 
+            this.btnEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEkle.FlatAppearance.BorderSize = 0;
             this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkle.Image = global::MusicApp.UI.Properties.Resources.add;

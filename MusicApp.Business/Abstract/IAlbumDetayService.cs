@@ -6,7 +6,7 @@ namespace MusicApp.Business.Abstract
     public interface IAlbumDetayService
     {
         List<AlbumDetay> TumAlbumDetaylariGetir();
-        AlbumDetay AlbumDetayiGetir(int albumId);
+        List<AlbumDetay> AlbumDetayiGetir(int albumId);
         AlbumDetay SanatciAlbumuGetir(int sanatciId);
         AlbumDetay SarkiAlbumuGetir(int sarkiId);
         AlbumDetay TurAlbumuGetir(int turId);

@@ -24,9 +24,9 @@ namespace MusicApp.Business.Concrete
             return _albumDetayDal.Update(albumDetay);
         }
 
-        public AlbumDetay AlbumDetayiGetir(int albumId)
+        public List<AlbumDetay> AlbumDetayiGetir(int albumId)
         {
-            return _albumDetayDal.Get(x => x.albumId == albumId);
+            return _albumDetayDal.GetList(x => x.albumId == albumId);
         }
 
         public void AlbumDetaySil(AlbumDetay albumDetay)
