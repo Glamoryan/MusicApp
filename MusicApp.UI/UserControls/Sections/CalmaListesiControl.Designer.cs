@@ -30,9 +30,12 @@ namespace MusicApp.UI.UserControls.Sections
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.grbxPop = new System.Windows.Forms.GroupBox();
-            this.grbxJazz = new System.Windows.Forms.GroupBox();
-            this.grbxKlasik = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnlPop = new System.Windows.Forms.Panel();
+            this.pnlJazz = new System.Windows.Forms.Panel();
+            this.pnlKlasik = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -46,50 +49,75 @@ namespace MusicApp.UI.UserControls.Sections
             this.label1.TabIndex = 0;
             this.label1.Text = "Çalma Listelerin";
             // 
-            // grbxPop
+            // label2
             // 
-            this.grbxPop.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grbxPop.ForeColor = System.Drawing.Color.White;
-            this.grbxPop.Location = new System.Drawing.Point(42, 75);
-            this.grbxPop.Name = "grbxPop";
-            this.grbxPop.Size = new System.Drawing.Size(303, 497);
-            this.grbxPop.TabIndex = 1;
-            this.grbxPop.TabStop = false;
-            this.grbxPop.Text = "Pop";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(25, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Pop";
             // 
-            // grbxJazz
+            // pnlPop
             // 
-            this.grbxJazz.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grbxJazz.ForeColor = System.Drawing.Color.White;
-            this.grbxJazz.Location = new System.Drawing.Point(413, 75);
-            this.grbxJazz.Name = "grbxJazz";
-            this.grbxJazz.Size = new System.Drawing.Size(303, 497);
-            this.grbxJazz.TabIndex = 1;
-            this.grbxJazz.TabStop = false;
-            this.grbxJazz.Text = "Jazz";
+            this.pnlPop.Location = new System.Drawing.Point(25, 113);
+            this.pnlPop.Name = "pnlPop";
+            this.pnlPop.Size = new System.Drawing.Size(348, 505);
+            this.pnlPop.TabIndex = 1;
             // 
-            // grbxKlasik
+            // pnlJazz
             // 
-            this.grbxKlasik.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.grbxKlasik.ForeColor = System.Drawing.Color.White;
-            this.grbxKlasik.Location = new System.Drawing.Point(782, 75);
-            this.grbxKlasik.Name = "grbxKlasik";
-            this.grbxKlasik.Size = new System.Drawing.Size(303, 497);
-            this.grbxKlasik.TabIndex = 1;
-            this.grbxKlasik.TabStop = false;
-            this.grbxKlasik.Text = "Klasik";
+            this.pnlJazz.Location = new System.Drawing.Point(389, 113);
+            this.pnlJazz.Name = "pnlJazz";
+            this.pnlJazz.Size = new System.Drawing.Size(348, 505);
+            this.pnlJazz.TabIndex = 1;
+            // 
+            // pnlKlasik
+            // 
+            this.pnlKlasik.Location = new System.Drawing.Point(753, 113);
+            this.pnlKlasik.Name = "pnlKlasik";
+            this.pnlKlasik.Size = new System.Drawing.Size(348, 505);
+            this.pnlKlasik.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(389, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Jazz";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(753, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 30);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Klasik";
             // 
             // CalmaListesiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(34)))));
-            this.Controls.Add(this.grbxKlasik);
-            this.Controls.Add(this.grbxJazz);
-            this.Controls.Add(this.grbxPop);
+            this.Controls.Add(this.pnlKlasik);
+            this.Controls.Add(this.pnlJazz);
+            this.Controls.Add(this.pnlPop);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CalmaListesiControl";
             this.Size = new System.Drawing.Size(1112, 648);
+            this.Load += new System.EventHandler(this.CalmaListesiControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,8 +126,11 @@ namespace MusicApp.UI.UserControls.Sections
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grbxPop;
-        private System.Windows.Forms.GroupBox grbxJazz;
-        private System.Windows.Forms.GroupBox grbxKlasik;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlPop;
+        private System.Windows.Forms.Panel pnlJazz;
+        private System.Windows.Forms.Panel pnlKlasik;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

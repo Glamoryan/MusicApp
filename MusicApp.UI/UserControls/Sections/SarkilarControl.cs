@@ -1,6 +1,7 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.AuthControls;
 using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
@@ -18,6 +19,7 @@ namespace MusicApp.UI.UserControls.Sections
         private ISanatciService _sanatciService;
         private IAlbumDetayService _albumDetayService;
         private ITurService _turService;
+        private ICalmaListesiService _calmaListesiService;
 
         private SarkiItem _sarkiItem;        
 
@@ -33,6 +35,7 @@ namespace MusicApp.UI.UserControls.Sections
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
             _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
             _turService = InstanceFactory.GetInstance<ITurService>();
+            _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
         }           
         
         private void sesYukselt(WindowsMediaPlayer aktifOynatici)
@@ -114,8 +117,36 @@ namespace MusicApp.UI.UserControls.Sections
             }
         }
 
+        private bool calmaListesindeVarmi(Sarki sarki)
+        {
+            List<CalmaListesi> calmaListesi = _calmaListesiService.KullaniciCalmaListeleriniGetir(LoginManager.etkinKullanici.kullaniciId);
+            if(calmaListesi.Count > 0)
+            {
+                foreach (CalmaListesi liste in calmaListesi)
+                {
+                    if (sarki.sarkiId == liste.sarkiId)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private void calmaListesineEkle(Sarki sarki)
+        {
+            CalmaListesi calmaListesi = new CalmaListesi
+            {
+                kullaniciId = LoginManager.etkinKullanici.kullaniciId,
+                sarkiId = sarki.sarkiId,
+                turId = _albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId
+            };
+            _calmaListesiService.CalmaListesiEkle(calmaListesi);
+            MessageBox.Show("Çalma listesine eklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            sarkilariGetir();
+        }
+
         private void sarkilariGetir()
         {
+            pnlSarkilar.Controls.Clear();
             List<Sarki> sarkilar = _sarkiService.TumSarkilariGetir();
             
             int sayac = 0;
@@ -128,6 +159,12 @@ namespace MusicApp.UI.UserControls.Sections
                 _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
+
+                if (!calmaListesindeVarmi(sarki))
+                    _sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
+                else
+                    _sarkiItem.btnEkle.Visible = false;
+
                 pnlSarkilar.Controls.Add(_sarkiItem);
                 sayac++;
             }
