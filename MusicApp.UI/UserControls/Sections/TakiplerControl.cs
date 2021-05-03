@@ -2,6 +2,7 @@
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
 using MusicApp.UI.AuthControls;
+using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
@@ -55,11 +56,7 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void TakiplerControl_Load(object sender, EventArgs e)
         {
-            pnlTakipler.AutoScroll = false;
-            pnlTakipler.HorizontalScroll.Enabled = false;
-            pnlTakipler.HorizontalScroll.Visible = false;
-            pnlTakipler.HorizontalScroll.Maximum = 0;
-            pnlTakipler.AutoScroll = true;
+            Utilities.scroolbarEkle(pnlTakipler);
 
             takipleriGetir();
         }

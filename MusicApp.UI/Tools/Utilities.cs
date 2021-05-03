@@ -9,5 +9,14 @@ namespace MusicApp.UI.Tools
             eklenecek.Controls.Clear();
             eklenecek.Controls.Add(eklenen);
         }
+
+        public static void scroolbarEkle(Panel eklenecekPanel)
+        {
+            eklenecekPanel.AutoScroll = false;
+            eklenecekPanel.HorizontalScroll.Enabled = false;
+            eklenecekPanel.HorizontalScroll.Visible = false;
+            eklenecekPanel.HorizontalScroll.Maximum = 0;
+            eklenecekPanel.AutoScroll = true;
+        }
     }
 }

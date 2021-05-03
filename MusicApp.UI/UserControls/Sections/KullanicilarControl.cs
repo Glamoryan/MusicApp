@@ -2,6 +2,7 @@
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
 using MusicApp.UI.AuthControls;
+using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
@@ -92,11 +93,7 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void KullanicilarControl_Load(object sender, EventArgs e)
         {
-            pnlKullanicilar.AutoScroll = false;
-            pnlKullanicilar.HorizontalScroll.Enabled = false;
-            pnlKullanicilar.HorizontalScroll.Visible = false;
-            pnlKullanicilar.HorizontalScroll.Maximum = 0;
-            pnlKullanicilar.AutoScroll = true;
+            Utilities.scroolbarEkle(pnlKullanicilar);
 
             kullanicilariGetir();
         }

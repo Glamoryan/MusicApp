@@ -1,6 +1,7 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
@@ -48,11 +49,7 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void AlbumlerControl_Load(object sender, EventArgs e)
         {
-            pnlAlbumler.AutoScroll = false;
-            pnlAlbumler.HorizontalScroll.Enabled = false;
-            pnlAlbumler.HorizontalScroll.Visible = false;
-            pnlAlbumler.HorizontalScroll.Maximum = 0;
-            pnlAlbumler.AutoScroll = true;
+            Utilities.scroolbarEkle(pnlAlbumler);
 
             albumleriGetir();
         }
