@@ -1,6 +1,7 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.AuthControls;
 using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
@@ -16,6 +17,7 @@ namespace MusicApp.UI.UserControls.Sections
         private ISanatciService _sanatciService;
         private ITurService _turService;
         private ISarkiService _sarkiService;
+        private ICalmaListesiService _calmaListesiService;
 
         private AlbumItem _albumItem;
 
@@ -27,6 +29,7 @@ namespace MusicApp.UI.UserControls.Sections
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
             _turService = InstanceFactory.GetInstance<ITurService>();
             _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
+            _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
         }        
 
         private void albumSarkilariniGetir(Album album)
@@ -47,10 +50,44 @@ namespace MusicApp.UI.UserControls.Sections
                     sarkiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(albumDetay.sanatciId).sanatciAdi;
                     sarkiItem.lblTurAdi.Text = _turService.TurGetir(albumDetay.turId).turAdi;
                     sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
+                    sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(albumDetay.sarkiId);
                     pnlSarkilar.Controls.Add(sarkiItem);
                     sayac++;
                 }
             }
+        }
+
+        private bool calmaListesindeVarmi(int sarkiId)
+        {
+            List<CalmaListesi> calmaListesi = _calmaListesiService.KullaniciCalmaListeleriniGetir(LoginManager.etkinKullanici.kullaniciId);
+            if (calmaListesi.Count >= 1)
+            {
+                foreach (CalmaListesi liste in calmaListesi)
+                {
+                    if (liste.sarkiId == sarkiId)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void calmaListesineEkle(int sarkiId)
+        {
+            if (!calmaListesindeVarmi(sarkiId))
+            {
+                CalmaListesi calmaListesi = new CalmaListesi
+                {
+                    kullaniciId = LoginManager.etkinKullanici.kullaniciId,
+                    sarkiId = sarkiId,
+                    turId = _albumDetayService.SarkiAlbumuGetir(sarkiId).turId
+                };
+                _calmaListesiService.CalmaListesiEkle(calmaListesi);
+                MessageBox.Show("Şarkı çalma listesine eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Şarkı çalma listesinde zaten mevcut", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void albumleriGetir()

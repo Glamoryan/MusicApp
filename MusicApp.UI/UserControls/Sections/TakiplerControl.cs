@@ -39,6 +39,73 @@ namespace MusicApp.UI.UserControls.Sections
             takipleriGetir();
         }
 
+        private bool calmaListesindeVarmi(int sarkiId)
+        {
+            List<CalmaListesi> calmaListesi = _calmaListesiService.KullaniciCalmaListeleriniGetir(LoginManager.etkinKullanici.kullaniciId);
+            if(calmaListesi.Count >= 1)
+            {
+                foreach (CalmaListesi liste in calmaListesi)
+                {
+                    if (liste.sarkiId == sarkiId)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void tumunuCalmaListesineEkle(int kullaniciId)
+        {
+            List<CalmaListesi> calmaListesi = _calmaListesiService.KullaniciCalmaListeleriniGetir(kullaniciId);
+            CalmaListesi yeniListe;
+            bool eklendi = false;
+            if(calmaListesi.Count >= 1)
+            {
+                foreach (CalmaListesi liste in calmaListesi)
+                {
+                    if (calmaListesindeVarmi(liste.sarkiId))
+                        continue;
+                    else
+                    {
+                        yeniListe = new CalmaListesi
+                        {
+                            kullaniciId = LoginManager.etkinKullanici.kullaniciId,
+                            sarkiId = liste.sarkiId,
+                            turId = liste.turId
+                        };
+                        _calmaListesiService.CalmaListesiEkle(yeniListe);
+                        eklendi = true;
+                    }
+                }
+                if (eklendi)
+                    MessageBox.Show("Çalma listenizde olmayan tüm şarkılar çalma listenize eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+                else
+                    MessageBox.Show("Bu şarkılar zaten çalma listenizde mevcut", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show("Seçili kullanıcının çalma listesi boş", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void calmaListesineEkle(Sarki sarki,int turId)
+        {
+            if (!calmaListesindeVarmi(sarki.sarkiId))
+            {
+                CalmaListesi yeniListe = new CalmaListesi
+                {
+                    kullaniciId = LoginManager.etkinKullanici.kullaniciId,
+                    sarkiId = sarki.sarkiId,
+                    turId = turId
+                };
+                _calmaListesiService.CalmaListesiEkle(yeniListe);
+                MessageBox.Show("Şarkı çalma listenize eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else
+            {
+                MessageBox.Show("Şarkı çalma listenizde zaten mevcut", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                       
+        }
+
         private void kullaniciCalmaListesiGetir(int kullaniciId)
         {
             pnlPop.Controls.Clear();
@@ -59,6 +126,7 @@ namespace MusicApp.UI.UserControls.Sections
                     kullaniciCalmaListesiItem = new KullaniciCalmaListesiItem();
                     kullaniciCalmaListesiItem.lblMuzikAdi.Text = sarki.sarkiAdi;
                     kullaniciCalmaListesiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi;
+                    kullaniciCalmaListesiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki,liste.turId);
 
                     switch (tur.turAdi.Trim().ToLower())
                     {
@@ -100,6 +168,7 @@ namespace MusicApp.UI.UserControls.Sections
                     _takipItem.lblTakipEdilen.Text = _kullaniciTakipService.TakipEttikleriniGetir(kullaniciTakip.kullaniciId).Count.ToString();
                     _takipItem.btnTakiptenCik.Click += (s, e) => takiptenCik(kullaniciTakip);
                     _takipItem.btnSec.Click += (s, e) => kullaniciCalmaListesiGetir(kullaniciTakip.kullaniciId);
+                    _takipItem.btnTumunuEkle.Click += (s, e) => tumunuCalmaListesineEkle(kullaniciTakip.kullaniciId);
                     pnlTakipler.Controls.Add(_takipItem);
                     sayac++;
                 }
