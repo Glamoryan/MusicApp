@@ -154,8 +154,8 @@ namespace MusicApp.UI.UserControls.Sections
             {                
                 _sarkiItem = new SarkiItem();
                 _sarkiItem.Top = (sayac * 60);
-                _sarkiItem.lblMuzikAdi.Text = sarki.sarkiAdi;
-                _sarkiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi;
+                _sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi,15);
+                _sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi,15);
                 _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);

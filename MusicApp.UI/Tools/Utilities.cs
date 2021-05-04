@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace MusicApp.UI.Tools
 {
@@ -17,6 +18,11 @@ namespace MusicApp.UI.Tools
             eklenecekPanel.HorizontalScroll.Visible = false;
             eklenecekPanel.HorizontalScroll.Maximum = 0;
             eklenecekPanel.AutoScroll = true;
+        }
+
+        public static string textSinirla(string text,int max=12)
+        {
+            return Regex.Replace(text.Trim(), "(?<=^.{"+max+"}).*", "...");
         }
     }
 }

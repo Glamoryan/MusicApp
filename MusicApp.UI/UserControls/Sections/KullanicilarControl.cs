@@ -70,10 +70,10 @@ namespace MusicApp.UI.UserControls.Sections
                 _kullaniciItem = new KullaniciItem();
                 _kullaniciItem.lblAbonelikAdi.ForeColor = abonelikAdi == "Premium" ? Color.Yellow : Color.White;
                 _kullaniciItem.Top = (sayac * 60);
-                _kullaniciItem.lblKullaniciAdi.Text = kullanici.kullaniciAdi;
+                _kullaniciItem.lblKullaniciAdi.Text = Utilities.textSinirla(kullanici.kullaniciAdi,18);
                 _kullaniciItem.lblRolAdi.Text = "Kullanıcı";
                 _kullaniciItem.lblAbonelikAdi.Text = abonelikAdi;
-                _kullaniciItem.lblUlkeAdi.Text = kullanici.ulkeAdi;
+                _kullaniciItem.lblUlkeAdi.Text = Utilities.textSinirla(kullanici.ulkeAdi);
 
                 if (takipEdiliyorMu(kullanici))
                 {

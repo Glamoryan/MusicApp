@@ -124,8 +124,8 @@ namespace MusicApp.UI.UserControls.Sections
                     Sarki sarki = _sarkiService.SarkiGetir(liste.sarkiId);
                     Tur tur = _turService.TurGetir(liste.turId);
                     kullaniciCalmaListesiItem = new KullaniciCalmaListesiItem();
-                    kullaniciCalmaListesiItem.lblMuzikAdi.Text = sarki.sarkiAdi;
-                    kullaniciCalmaListesiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi;
+                    kullaniciCalmaListesiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi);
+                    kullaniciCalmaListesiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi);
                     kullaniciCalmaListesiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki,liste.turId);
 
                     switch (tur.turAdi.Trim().ToLower())
@@ -163,7 +163,7 @@ namespace MusicApp.UI.UserControls.Sections
                     kullanici = _kullaniciService.KullaniciGetir(kullaniciTakip.kullaniciId);
                     _takipItem = new TakipItem();
                     _takipItem.Top = (sayac * 80);
-                    _takipItem.lblKullaniciAdi.Text = kullanici.kullaniciAdi;
+                    _takipItem.lblKullaniciAdi.Text = Utilities.textSinirla(kullanici.kullaniciAdi,14);
                     _takipItem.lblTakipciSayisi.Text = _kullaniciTakipService.KullanicininTakipcileriniGetir(kullaniciTakip.kullaniciId).Count.ToString();
                     _takipItem.lblTakipEdilen.Text = _kullaniciTakipService.TakipEttikleriniGetir(kullaniciTakip.kullaniciId).Count.ToString();
                     _takipItem.btnTakiptenCik.Click += (s, e) => takiptenCik(kullaniciTakip);

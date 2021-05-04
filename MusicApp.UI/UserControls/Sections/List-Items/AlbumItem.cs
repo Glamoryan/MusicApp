@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using MusicApp.UI.Tools;
+using System;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.UserControls.Sections.List_Items
@@ -12,7 +8,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
     {
         public AlbumItem()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
     }
 }

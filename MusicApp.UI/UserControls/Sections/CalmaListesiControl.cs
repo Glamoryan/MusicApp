@@ -2,10 +2,10 @@
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
 using MusicApp.UI.AuthControls;
+using MusicApp.UI.Tools;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.UserControls.Sections
@@ -48,8 +48,8 @@ namespace MusicApp.UI.UserControls.Sections
                 {
                     _calmaListesiItem = new CalmaListesiItem();
                     sarki = _sarkiService.SarkiGetir(liste.sarkiId);
-                    _calmaListesiItem.lblMuzikAdi.Text = Regex.Replace(sarki.sarkiAdi, "(?<=^.{12}).*", "...");
-                    _calmaListesiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi;
+                    _calmaListesiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi);
+                    _calmaListesiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi,15);
                     _calmaListesiItem.btnCikar.Click += (s, e) => calmaListesindenCikar(liste);
                     switch (_turService.TurGetir(liste.turId).turAdi.Trim().ToLower())
                     {

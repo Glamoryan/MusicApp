@@ -46,8 +46,8 @@ namespace MusicApp.UI.UserControls.Sections
                     sarkiItem = new SarkiItem();
                     sarki = _sarkiService.SarkiGetir(albumDetay.sarkiId);
                     sarkiItem.Top = (sayac * 60);
-                    sarkiItem.lblMuzikAdi.Text = sarki.sarkiAdi;
-                    sarkiItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(albumDetay.sanatciId).sanatciAdi;
+                    sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi,15);
+                    sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(albumDetay.sanatciId).sanatciAdi,15);
                     sarkiItem.lblTurAdi.Text = _turService.TurGetir(albumDetay.turId).turAdi;
                     sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                     sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(albumDetay.sarkiId);
@@ -101,8 +101,8 @@ namespace MusicApp.UI.UserControls.Sections
                 _albumItem = new AlbumItem();
                 albumDetay = _albumDetayService.AlbumDetayiGetir(album.albumId);
                 _albumItem.Top = (sayac * 60);
-                _albumItem.lblAlbumAdi.Text = album.albumAdi;
-                _albumItem.lblSanatciAdi.Text = _sanatciService.SanatciGetir(albumDetay[0].sanatciId).sanatciAdi;
+                _albumItem.lblAlbumAdi.Text = Utilities.textSinirla(album.albumAdi,18);
+                _albumItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(albumDetay[0].sanatciId).sanatciAdi,18);
                 _albumItem.lblAlbumTarihi.Text = album.albumTarih.ToShortDateString();
                 _albumItem.lblAlbumTuru.Text = _turService.TurGetir(albumDetay[0].turId).turAdi;
                 _albumItem.btnSec.Click += (s, e) => albumSarkilariniGetir(album);
