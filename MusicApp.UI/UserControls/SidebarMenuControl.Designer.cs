@@ -73,7 +73,7 @@ namespace MusicApp.UI.UserControls
             this.btnCalmaListesi.Name = "btnCalmaListesi";
             this.btnCalmaListesi.Size = new System.Drawing.Size(211, 45);
             this.btnCalmaListesi.TabIndex = 1;
-            this.btnCalmaListesi.Text = "Çalma Listeleri";
+            this.btnCalmaListesi.Text = "Çalma Listelerin";
             this.btnCalmaListesi.UseVisualStyleBackColor = false;
             this.btnCalmaListesi.Click += new System.EventHandler(this.btnCalmaListesi_Click);
             // 

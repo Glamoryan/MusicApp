@@ -35,6 +35,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblTakipEdilen = new System.Windows.Forms.Label();
             this.btnTumunuEkle = new System.Windows.Forms.Button();
             this.btnTakiptenCik = new System.Windows.Forms.Button();
+            this.btnSec = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnTumunuEkle.ForeColor = System.Drawing.Color.White;
             this.btnTumunuEkle.Location = new System.Drawing.Point(407, 10);
             this.btnTumunuEkle.Name = "btnTumunuEkle";
-            this.btnTumunuEkle.Size = new System.Drawing.Size(141, 44);
+            this.btnTumunuEkle.Size = new System.Drawing.Size(129, 44);
             this.btnTumunuEkle.TabIndex = 2;
             this.btnTumunuEkle.Text = "Tüm Listeyi Ekle";
             this.btnTumunuEkle.UseVisualStyleBackColor = false;
@@ -104,18 +105,34 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnTakiptenCik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakiptenCik.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTakiptenCik.ForeColor = System.Drawing.Color.White;
-            this.btnTakiptenCik.Location = new System.Drawing.Point(554, 10);
+            this.btnTakiptenCik.Location = new System.Drawing.Point(542, 10);
             this.btnTakiptenCik.Name = "btnTakiptenCik";
-            this.btnTakiptenCik.Size = new System.Drawing.Size(69, 44);
+            this.btnTakiptenCik.Size = new System.Drawing.Size(37, 44);
             this.btnTakiptenCik.TabIndex = 2;
             this.btnTakiptenCik.Text = "X";
             this.btnTakiptenCik.UseVisualStyleBackColor = false;
+            // 
+            // btnSec
+            // 
+            this.btnSec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.btnSec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSec.FlatAppearance.BorderSize = 0;
+            this.btnSec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSec.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSec.ForeColor = System.Drawing.Color.White;
+            this.btnSec.Image = global::MusicApp.UI.Properties.Resources.right;
+            this.btnSec.Location = new System.Drawing.Point(585, 10);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(34, 44);
+            this.btnSec.TabIndex = 2;
+            this.btnSec.UseVisualStyleBackColor = false;
             // 
             // TakipItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btnSec);
             this.Controls.Add(this.btnTakiptenCik);
             this.Controls.Add(this.btnTumunuEkle);
             this.Controls.Add(this.lblTakipEdilen);
@@ -138,5 +155,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblTakipEdilen;
         public System.Windows.Forms.Button btnTumunuEkle;
         public System.Windows.Forms.Button btnTakiptenCik;
+        public System.Windows.Forms.Button btnSec;
     }
 }
