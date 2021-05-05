@@ -3,25 +3,23 @@ using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
 using MusicApp.UI.AuthControls;
 using MusicApp.UI.Tools;
+using MusicApp.UI.UserControls.Player;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WMPLib;
 
 namespace MusicApp.UI.UserControls.Sections
 {
     public partial class SarkilarControl : UserControl
     {
-        private WindowsMediaPlayer oynatici;
-
         private ISarkiService _sarkiService;
         private ISanatciService _sanatciService;
         private IAlbumDetayService _albumDetayService;
         private ITurService _turService;
         private ICalmaListesiService _calmaListesiService;
 
-        private SarkiItem _sarkiItem;        
+        private SarkiItem _sarkiItem;
 
         private Button ilkButton;
 
@@ -36,91 +34,104 @@ namespace MusicApp.UI.UserControls.Sections
             _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
             _turService = InstanceFactory.GetInstance<ITurService>();
             _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
-        }           
-        
-        private void sesYukselt(WindowsMediaPlayer aktifOynatici)
-        {
-            if (aktifOynatici.settings.volume < 100)
-                aktifOynatici.settings.volume = (aktifOynatici.settings.volume + 10);
-            oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
         }
 
-        private void sesDusur(WindowsMediaPlayer aktifOynatici)
+        private void oynaticiyiGuncelle(Button sarkiButonu)
         {
-            if (aktifOynatici.settings.volume > 0)
-                aktifOynatici.settings.volume = (aktifOynatici.settings.volume - 10);
-            oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
-        }
+            oynaticiControl = new OynaticiControl();
+            oynaticiControl.btnPlay.Enabled = true;
+            oynaticiControl.lblMuzikAdi.Text = Oynatici.suankiSarki.sarkiAdi;
+            oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(Oynatici.suankiSarki.sanatciId).sanatciAdi;
 
-        private void oynaticiyiGuncelle(Sarki calanSarki,byte durum)
-        {
-            switch (durum)
+            if (Oynatici.caliyorMu)
             {
-                case 0: //ilk şarkı başladığında (transitioning)
-                    oynaticiControl = new OynaticiControl();
-                    oynaticiControl.lblMuzikAdi.Text = calanSarki.sarkiAdi;
-                    oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(calanSarki.sanatciId).sanatciAdi;
-                    oynaticiControl.btnPlay.Enabled = true;
-                    oynaticiControl.btnSesYukselt.Enabled = true;
-                    oynaticiControl.btnSesDusur.Enabled = true;                    
-                    oynaticiControl.btnSesYukselt.Click += (s, e) => sesYukselt(oynatici);
-                    oynaticiControl.btnSesDusur.Click += (s, e) => sesDusur(oynatici);
-                    oynaticiControl.btnPlay.Image = Properties.Resources.pause;                    
-                    ilkButton.Image = Properties.Resources.pause;
-                    oynaticiControl.btnPlay.Click += (s, e) => oynaticiyiAktifEt(calanSarki,s as Button);
-                    oynaticiPanel = Parent.Parent.Controls.Find("pnlPlayer", true)[0] as Panel;
-                    oynaticiControl.lblSesDuzey.Text = oynatici.settings.volume.ToString();
-                    Utilities.icerikDegistir(oynaticiPanel, oynaticiControl);                    
-                    break;
-                case 1: //Şarkı çalıyorsa
-                    oynaticiControl.btnPlay.Image = Properties.Resources.play;
-                    ilkButton.Image = Properties.Resources.play;                    
-                    break;
-                case 2: //Şarkı durmuşsa
-                    oynaticiControl.btnPlay.Image = Properties.Resources.pause;
-                    ilkButton.Image = Properties.Resources.pause;                    
-                    break;
-            }                        
-        }
-
-        private void oynaticiyiAktifEt(Sarki sarki, Button sender)
-        {            
-            string sarkiUrl = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";            
-            if (oynatici == null)
-                oynatici = new WindowsMediaPlayer();            
-
-            if (oynatici.URL != sarkiUrl)
-            {
-                if(ilkButton != null)
-                    ilkButton.Image = Properties.Resources.play;
-                oynatici.URL = sarkiUrl;
-            }                
-
-            switch (oynatici.playState)
-            {
-                case WMPPlayState.wmppsTransitioning:
-                    oynatici.controls.play();
-                    sender.Image = Properties.Resources.pause;                    
-                    ilkButton = sender;
-                    oynaticiyiGuncelle(sarki,0);
-                    break;
-                case WMPPlayState.wmppsPaused:
-                    oynatici.controls.play();
-                    sender.Image = Properties.Resources.pause;
-                    oynaticiyiGuncelle(sarki, 2);
-                    break;
-                case WMPPlayState.wmppsPlaying:
-                    oynatici.controls.pause();
-                    sender.Image = Properties.Resources.play;
-                    oynaticiyiGuncelle(sarki, 1);
-                    break;                               
+                oynaticiControl.btnPlay.Image = Properties.Resources.pause;
+                sarkiButonu.Image = Properties.Resources.pause;
             }
+            else
+            {
+                oynaticiControl.btnPlay.Image = Properties.Resources.play;
+                sarkiButonu.Image = Properties.Resources.play;
+            }
+
+
+
+            Utilities.icerikDegistir(Parent.Parent.Controls.Find("pnlPlayer", true)[0], oynaticiControl);
+
+            //switch (durum)
+            //{
+            //    case 0: //ilk şarkı başladığında (transitioning)
+            //        oynaticiControl = new OynaticiControl();
+            //        oynaticiControl.lblMuzikAdi.Text = calanSarki.sarkiAdi;
+            //        oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(calanSarki.sanatciId).sanatciAdi;
+            //        oynaticiControl.btnPlay.Enabled = true;
+            //        oynaticiControl.btnSesYukselt.Enabled = true;
+            //        oynaticiControl.btnSesDusur.Enabled = true;                    
+            //        oynaticiControl.btnSesYukselt.Click += (s, e) => Oynatici.sesYukselt();
+            //        oynaticiControl.btnSesDusur.Click += (s, e) => Oynatici.sesDusur();
+            //        Oynatici.sesLabel = oynaticiControl.lblSesDuzey;                    
+            //        oynaticiControl.btnPlay.Image = Properties.Resources.pause;                    
+            //        ilkButton.Image = Properties.Resources.pause;
+            //        oynaticiControl.btnPlay.Click += (s, e) => oynaticiyiAktifEt(calanSarki,s as Button);
+            //        oynaticiPanel = Parent.Parent.Controls.Find("pnlPlayer", true)[0] as Panel;
+            //        oynaticiControl.lblSesDuzey.Text = Oynatici.GetSesDuzeyi();
+            //        Utilities.icerikDegistir(oynaticiPanel, oynaticiControl);                    
+            //        break;
+            //    case 1: //Şarkı çalıyorsa
+            //        oynaticiControl.btnPlay.Image = Properties.Resources.play;
+            //        ilkButton.Image = Properties.Resources.play;                    
+            //        break;
+            //    case 2: //Şarkı durmuşsa
+            //        oynaticiControl.btnPlay.Image = Properties.Resources.pause;
+            //        ilkButton.Image = Properties.Resources.pause;                    
+            //        break;
+            //}                        
+        }
+
+        private void oynaticiyiAktifEt(Sarki sarki, Button sarkiButonu)
+        {            
+            Oynatici.oynaticiBaslat(sarki);
+            oynaticiyiGuncelle(sarkiButonu);            
+            
+
+
+
+
+
+            //string sarkiYolu = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";
+
+            //if (Oynatici.GetOynatici().URL != sarkiYolu)
+            //{
+            //    if(ilkButton != null)
+            //        ilkButton.Image = Properties.Resources.play;
+            //    Oynatici.GetOynatici().URL = sarkiYolu;
+            //}                
+
+            //switch (Oynatici.GetOynatici().playState)
+            //{
+            //    case WMPPlayState.wmppsTransitioning:
+            //        Oynatici.sarkiOynat();
+            //        sender.Image = Properties.Resources.pause;                    
+            //        ilkButton = sender;
+            //        oynaticiyiGuncelle(sarki,0);
+            //        break;
+            //    case WMPPlayState.wmppsPaused:
+            //        Oynatici.sarkiOynat();
+            //        sender.Image = Properties.Resources.pause;
+            //        oynaticiyiGuncelle(sarki, 2);
+            //        break;
+            //    case WMPPlayState.wmppsPlaying:
+            //        Oynatici.sarkiDuraklat();
+            //        sender.Image = Properties.Resources.play;
+            //        oynaticiyiGuncelle(sarki, 1);
+            //        break;                               
+            //}
         }
 
         private bool calmaListesindeVarmi(Sarki sarki)
         {
             List<CalmaListesi> calmaListesi = _calmaListesiService.KullaniciCalmaListeleriniGetir(LoginManager.etkinKullanici.kullaniciId);
-            if(calmaListesi.Count > 0)
+            if (calmaListesi.Count > 0)
             {
                 foreach (CalmaListesi liste in calmaListesi)
                 {
@@ -148,14 +159,14 @@ namespace MusicApp.UI.UserControls.Sections
         {
             pnlSarkilar.Controls.Clear();
             List<Sarki> sarkilar = _sarkiService.TumSarkilariGetir();
-            
+
             int sayac = 0;
             foreach (Sarki sarki in sarkilar)
-            {                
+            {
                 _sarkiItem = new SarkiItem();
                 _sarkiItem.Top = (sayac * 60);
-                _sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi,15);
-                _sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi,15);
+                _sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi, 15);
+                _sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi, 15);
                 _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);

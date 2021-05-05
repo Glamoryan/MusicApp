@@ -3,6 +3,7 @@ using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
 using MusicApp.UI.AuthControls;
 using MusicApp.UI.Tools;
+using MusicApp.UI.UserControls.Player;
 using MusicApp.UI.UserControls.Sections.List_Items;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,7 @@ namespace MusicApp.UI.UserControls.Sections
                     sarkiItem.lblTurAdi.Text = _turService.TurGetir(albumDetay.turId).turAdi;
                     sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
                     sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(albumDetay.sarkiId);
+                    sarkiItem.btnOynat.Click += (s,e) => Oynatici.oynaticiBaslat(_sarkiService.SarkiGetir(albumDetay.sarkiId));
                     pnlSarkilar.Controls.Add(sarkiItem);
                     sayac++;
                 }
