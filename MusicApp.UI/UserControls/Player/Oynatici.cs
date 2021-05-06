@@ -1,4 +1,6 @@
-﻿using MusicApp.Entities.Concrete;
+﻿using MusicApp.Business.Abstract;
+using MusicApp.Business.Ninject;
+using MusicApp.Entities.Concrete;
 using System.Windows.Forms;
 using WMPLib;
 
@@ -6,6 +8,8 @@ namespace MusicApp.UI.UserControls.Player
 {
     public static class Oynatici
     {
+        private static ISarkiService _sarkiService;
+
         public static bool caliyorMu { get; set; }
         public static Sarki suankiSarki { get; set; }
 
@@ -20,7 +24,13 @@ namespace MusicApp.UI.UserControls.Player
         public static string GetSesDuzeyi()
         {
             return _mediaPlayer.settings.volume.ToString();
-        }        
+        }    
+        
+        private static void sarkiIzlenmesiGuncelle(Sarki sarki)
+        {
+            sarki.sarkiIzlenme++;
+            _sarkiService.SarkiGuncelle(sarki);
+        }
 
         public static void oynaticiBaslat(Sarki sarki)
         {
@@ -28,12 +38,17 @@ namespace MusicApp.UI.UserControls.Player
             string yeniYol = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";
 
             if (_mediaPlayer == null)
-                _mediaPlayer = new WindowsMediaPlayer();            
+            {
+                _mediaPlayer = new WindowsMediaPlayer();
+                _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
+            }
+                
 
             if (_sarkiYolu != yeniYol)
             {
                 _sarkiYolu = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";
-                _mediaPlayer.URL = _sarkiYolu;                
+                _mediaPlayer.URL = _sarkiYolu;
+                sarkiIzlenmesiGuncelle(sarki);
                 sarkiOynat();
             }
             else
