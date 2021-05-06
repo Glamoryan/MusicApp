@@ -57,6 +57,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.btnPlay.Size = new System.Drawing.Size(75, 40);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnOnceki
             // 

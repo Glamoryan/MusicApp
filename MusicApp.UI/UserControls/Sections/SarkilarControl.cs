@@ -19,12 +19,10 @@ namespace MusicApp.UI.UserControls.Sections
         private ITurService _turService;
         private ICalmaListesiService _calmaListesiService;
 
-        private SarkiItem _sarkiItem;
-
-        private Button ilkButton;
+        private SarkiItem _sarkiItem;        
 
         OynaticiControl oynaticiControl;
-        Panel oynaticiPanel;
+        Button ilkButton;
 
         public SarkilarControl()
         {
@@ -42,6 +40,14 @@ namespace MusicApp.UI.UserControls.Sections
             oynaticiControl.btnPlay.Enabled = true;
             oynaticiControl.lblMuzikAdi.Text = Oynatici.suankiSarki.sarkiAdi;
             oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(Oynatici.suankiSarki.sanatciId).sanatciAdi;
+            oynaticiControl.lblSesDuzey.Text = Oynatici.GetSesDuzeyi();
+            oynaticiControl.btnSesYukselt.Enabled = true;
+            oynaticiControl.btnSesYukselt.Click += (s, e) => Oynatici.sesYukselt(oynaticiControl.lblSesDuzey);
+            oynaticiControl.btnSesDusur.Enabled = true;
+            oynaticiControl.btnSesDusur.Click += (s, e) => Oynatici.sesDusur(oynaticiControl.lblSesDuzey);
+
+            if (sarkiButonu != ilkButton && ilkButton != null)
+                ilkButton.Image = Properties.Resources.play;
 
             if (Oynatici.caliyorMu)
             {
@@ -53,79 +59,14 @@ namespace MusicApp.UI.UserControls.Sections
                 oynaticiControl.btnPlay.Image = Properties.Resources.play;
                 sarkiButonu.Image = Properties.Resources.play;
             }
-
-
-
+            ilkButton = sarkiButonu;
             Utilities.icerikDegistir(Parent.Parent.Controls.Find("pnlPlayer", true)[0], oynaticiControl);
-
-            //switch (durum)
-            //{
-            //    case 0: //ilk şarkı başladığında (transitioning)
-            //        oynaticiControl = new OynaticiControl();
-            //        oynaticiControl.lblMuzikAdi.Text = calanSarki.sarkiAdi;
-            //        oynaticiControl.lblSanatciAdi.Text = _sanatciService.SanatciGetir(calanSarki.sanatciId).sanatciAdi;
-            //        oynaticiControl.btnPlay.Enabled = true;
-            //        oynaticiControl.btnSesYukselt.Enabled = true;
-            //        oynaticiControl.btnSesDusur.Enabled = true;                    
-            //        oynaticiControl.btnSesYukselt.Click += (s, e) => Oynatici.sesYukselt();
-            //        oynaticiControl.btnSesDusur.Click += (s, e) => Oynatici.sesDusur();
-            //        Oynatici.sesLabel = oynaticiControl.lblSesDuzey;                    
-            //        oynaticiControl.btnPlay.Image = Properties.Resources.pause;                    
-            //        ilkButton.Image = Properties.Resources.pause;
-            //        oynaticiControl.btnPlay.Click += (s, e) => oynaticiyiAktifEt(calanSarki,s as Button);
-            //        oynaticiPanel = Parent.Parent.Controls.Find("pnlPlayer", true)[0] as Panel;
-            //        oynaticiControl.lblSesDuzey.Text = Oynatici.GetSesDuzeyi();
-            //        Utilities.icerikDegistir(oynaticiPanel, oynaticiControl);                    
-            //        break;
-            //    case 1: //Şarkı çalıyorsa
-            //        oynaticiControl.btnPlay.Image = Properties.Resources.play;
-            //        ilkButton.Image = Properties.Resources.play;                    
-            //        break;
-            //    case 2: //Şarkı durmuşsa
-            //        oynaticiControl.btnPlay.Image = Properties.Resources.pause;
-            //        ilkButton.Image = Properties.Resources.pause;                    
-            //        break;
-            //}                        
         }
 
         private void oynaticiyiAktifEt(Sarki sarki, Button sarkiButonu)
         {            
             Oynatici.oynaticiBaslat(sarki);
-            oynaticiyiGuncelle(sarkiButonu);            
-            
-
-
-
-
-
-            //string sarkiYolu = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";
-
-            //if (Oynatici.GetOynatici().URL != sarkiYolu)
-            //{
-            //    if(ilkButton != null)
-            //        ilkButton.Image = Properties.Resources.play;
-            //    Oynatici.GetOynatici().URL = sarkiYolu;
-            //}                
-
-            //switch (Oynatici.GetOynatici().playState)
-            //{
-            //    case WMPPlayState.wmppsTransitioning:
-            //        Oynatici.sarkiOynat();
-            //        sender.Image = Properties.Resources.pause;                    
-            //        ilkButton = sender;
-            //        oynaticiyiGuncelle(sarki,0);
-            //        break;
-            //    case WMPPlayState.wmppsPaused:
-            //        Oynatici.sarkiOynat();
-            //        sender.Image = Properties.Resources.pause;
-            //        oynaticiyiGuncelle(sarki, 2);
-            //        break;
-            //    case WMPPlayState.wmppsPlaying:
-            //        Oynatici.sarkiDuraklat();
-            //        sender.Image = Properties.Resources.play;
-            //        oynaticiyiGuncelle(sarki, 1);
-            //        break;                               
-            //}
+            oynaticiyiGuncelle(sarkiButonu);                        
         }
 
         private bool calmaListesindeVarmi(Sarki sarki)
@@ -184,7 +125,6 @@ namespace MusicApp.UI.UserControls.Sections
         private void SarkilarControl_Load(object sender, EventArgs e)
         {
             Utilities.scroolbarEkle(pnlSarkilar);
-
             sarkilariGetir();
         }
     }

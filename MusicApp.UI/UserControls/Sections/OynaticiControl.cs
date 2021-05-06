@@ -1,4 +1,5 @@
 ﻿using MusicApp.UI.AuthControls;
+using MusicApp.UI.UserControls.Player;
 using System;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace MusicApp.UI.UserControls.Sections
             DialogResult sonuc = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış Yap?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(sonuc == DialogResult.Yes)
             {
+                Oynatici.sarkiDurdur();
+
                 LoginManager.etkinKullanici = null;
                 Form suankiForm = FindForm();
                 suankiForm.Hide();
@@ -28,6 +31,20 @@ namespace MusicApp.UI.UserControls.Sections
         private void pcbxCikis_Click(object sender, EventArgs e)
         {
             CikisYap();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            if (Oynatici.caliyorMu)
+            {
+                Oynatici.sarkiDuraklat();
+                btnPlay.Image = Properties.Resources.play;
+            }
+            else
+            {
+                Oynatici.sarkiOynat();
+                btnPlay.Image = Properties.Resources.pause;
+            }
         }
     }
 }

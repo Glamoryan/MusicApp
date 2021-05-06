@@ -9,8 +9,7 @@ namespace MusicApp.UI.UserControls.Player
         public static bool caliyorMu { get; set; }
         public static Sarki suankiSarki { get; set; }
 
-        private static WindowsMediaPlayer _mediaPlayer;
-        public static Label sesLabel;        
+        private static WindowsMediaPlayer _mediaPlayer;          
         private static string _sarkiYolu;
 
         public static WindowsMediaPlayer GetOynatici()
@@ -34,7 +33,7 @@ namespace MusicApp.UI.UserControls.Player
             if (_sarkiYolu != yeniYol)
             {
                 _sarkiYolu = sarki.sarkiYolu + "\\" + sarki.sarkiAdi + ".mp3";
-                _mediaPlayer.URL = _sarkiYolu;
+                _mediaPlayer.URL = _sarkiYolu;                
                 sarkiOynat();
             }
             else
@@ -64,18 +63,18 @@ namespace MusicApp.UI.UserControls.Player
             caliyorMu = false;
         }
 
-        public static void sesYukselt()
+        public static void sesYukselt(Label sesLabel)
         {
             if (_mediaPlayer.settings.volume < 100)
                 _mediaPlayer.settings.volume = (_mediaPlayer.settings.volume + 10);
-            sesLabel.Text = _mediaPlayer.settings.volume.ToString();
+            sesLabel.Text = GetSesDuzeyi();
         }
 
-        public static void sesDusur()
+        public static void sesDusur(Label sesLabel)
         {
             if (_mediaPlayer.settings.volume > 0)
                 _mediaPlayer.settings.volume = (_mediaPlayer.settings.volume - 10);
-            sesLabel.Text = _mediaPlayer.settings.volume.ToString();
+            sesLabel.Text = GetSesDuzeyi();
         }        
     }
 }
