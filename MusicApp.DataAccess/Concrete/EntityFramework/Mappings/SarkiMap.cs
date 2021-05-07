@@ -17,7 +17,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.sanatciId).HasColumnName("sanatciId");
             Property(x => x.sarkiAdi).HasColumnName("sarkiAdi");
             Property(x => x.sarkiYolu).HasColumnName("sarkiYolu");
-            Property(x => x.sarkiIzlenme).HasColumnName("sarkiIzlenme");
+            Property(x => x.sarkiDinlenmesi).HasColumnName("sarkiDinlenmesi");
         }
     }
 }

@@ -85,15 +85,20 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void calmaListesineEkle(Sarki sarki)
         {
-            CalmaListesi calmaListesi = new CalmaListesi
+            if (!calmaListesindeVarmi(sarki))
             {
-                kullaniciId = LoginManager.etkinKullanici.kullaniciId,
-                sarkiId = sarki.sarkiId,
-                turId = _albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId
-            };
-            _calmaListesiService.CalmaListesiEkle(calmaListesi);
-            MessageBox.Show("Çalma listesine eklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            sarkilariGetir();
+                CalmaListesi calmaListesi = new CalmaListesi
+                {
+                    kullaniciId = LoginManager.etkinKullanici.kullaniciId,
+                    sarkiId = sarki.sarkiId,
+                    turId = _albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId
+                };
+                _calmaListesiService.CalmaListesiEkle(calmaListesi);
+                MessageBox.Show("Çalma listesine eklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                sarkilariGetir();
+            }            
+            else
+                MessageBox.Show("Bu şarkı çalma listenizde zaten mevcut!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void sarkilariGetir()
@@ -109,13 +114,12 @@ namespace MusicApp.UI.UserControls.Sections
                 _sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi, 15);
                 _sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi, 15);
                 _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
-                _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
+                _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiDinlenmesi.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
+                _sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
 
-                if (!calmaListesindeVarmi(sarki))
-                    _sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
-                else
-                    _sarkiItem.btnEkle.Visible = false;
+                if (calmaListesindeVarmi(sarki))
+                    _sarkiItem.btnEkle.Visible = false;                                    
 
                 pnlSarkilar.Controls.Add(_sarkiItem);
                 sayac++;

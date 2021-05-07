@@ -28,7 +28,7 @@ namespace MusicApp.UI.UserControls.Player
         
         private static void sarkiIzlenmesiGuncelle(Sarki sarki)
         {
-            sarki.sarkiIzlenme++;
+            sarki.sarkiDinlenmesi++;
             _sarkiService.SarkiGuncelle(sarki);
         }
 

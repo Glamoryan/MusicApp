@@ -115,6 +115,10 @@ namespace MusicApp.UI.UserControls.Sections
 
         private void CalmaListesiControl_Load(object sender, EventArgs e)
         {
+            Utilities.scroolbarEkle(pnlPop);
+            Utilities.scroolbarEkle(pnlKlasik);
+            Utilities.scroolbarEkle(pnlJazz);
+
             calmaListesiGetir();
         }
     }

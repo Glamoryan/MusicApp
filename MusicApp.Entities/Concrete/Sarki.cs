@@ -8,6 +8,6 @@ namespace MusicApp.Entities.Concrete
         public int sanatciId { get; set; }
         public string sarkiAdi { get; set; }
         public string sarkiYolu { get; set; } //Şarkı dosyasının nerede olduğu
-        public int sarkiIzlenme { get; set; }
+        public int sarkiDinlenmesi { get; set; }
     }
 }

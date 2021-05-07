@@ -88,7 +88,7 @@ namespace MusicApp.UI.UserControls.Sections
                     sarkiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi,15);
                     sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(albumDetay.sanatciId).sanatciAdi,15);
                     sarkiItem.lblTurAdi.Text = _turService.TurGetir(albumDetay.turId).turAdi;
-                    sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiIzlenme.ToString();
+                    sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiDinlenmesi.ToString();
                     sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(albumDetay.sarkiId);
                     sarkiItem.btnOynat.Click += (s,e) => oynaticiyiAktifEt(_sarkiService.SarkiGetir(albumDetay.sarkiId),s as Button);
                     pnlSarkilar.Controls.Add(sarkiItem);
