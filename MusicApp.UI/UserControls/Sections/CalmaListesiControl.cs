@@ -90,21 +90,24 @@ namespace MusicApp.UI.UserControls.Sections
                     _calmaListesiItem.lblMuzikAdi.Text = Utilities.textSinirla(sarki.sarkiAdi);
                     _calmaListesiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi,15);
                     _calmaListesiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(_sarkiService.SarkiGetir(liste.sarkiId), s as Button);
-                    _calmaListesiItem.btnCikar.Click += (s, e) => calmaListesindenCikar(liste);
+                    _calmaListesiItem.btnCikar.Click += (s, e) => calmaListesindenCikar(liste);                    
                     switch (_turService.TurGetir(liste.turId).turAdi.Trim().ToLower())
                     {
                         case "pop":
                             _calmaListesiItem.Top = (popSayac * 100);
+                            _calmaListesiItem.lblSayac.Text = (popSayac + 1).ToString();
                             pnlPop.Controls.Add(_calmaListesiItem);                            
                             popSayac++;
                             break;
                         case "jazz":
                             _calmaListesiItem.Top = (jazzSayac * 100);
+                            _calmaListesiItem.lblSayac.Text = (jazzSayac + 1).ToString();
                             pnlJazz.Controls.Add(_calmaListesiItem);                            
                             jazzSayac++;
                             break;
                         case "klasik":
                             _calmaListesiItem.Top = (klasikSayac * 100);
+                            _calmaListesiItem.lblSayac.Text = (jazzSayac + 1).ToString();
                             pnlKlasik.Controls.Add(_calmaListesiItem);                            
                             klasikSayac++;
                             break;

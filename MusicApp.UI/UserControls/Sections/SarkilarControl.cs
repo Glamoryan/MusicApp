@@ -117,6 +117,7 @@ namespace MusicApp.UI.UserControls.Sections
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiDinlenmesi.ToString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
                 _sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
+                _sarkiItem.lblSayac.Text = (sayac + 1).ToString();
 
                 if (calmaListesindeVarmi(sarki))
                     _sarkiItem.btnEkle.Visible = false;                                    

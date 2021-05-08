@@ -62,20 +62,29 @@ namespace MusicApp.UI.UserControls.Player
 
         public static void sarkiOynat()
         {            
-            _mediaPlayer.controls.play();            
-            caliyorMu = true;
+            if(_mediaPlayer != null)
+            {
+                _mediaPlayer.controls.play();
+                caliyorMu = true;
+            }            
         }
 
         public static void sarkiDuraklat()
         {
-            _mediaPlayer.controls.pause();
-            caliyorMu = false;
+            if (_mediaPlayer != null)
+            {
+                _mediaPlayer.controls.pause();
+                caliyorMu = false;
+            }                
         }
 
         public static void sarkiDurdur()
         {
-            _mediaPlayer.controls.stop();
-            caliyorMu = false;
+            if (_mediaPlayer != null)
+            {
+                _mediaPlayer.controls.stop();
+                caliyorMu = false;
+            }
         }
 
         public static void sesYukselt(Label sesLabel)

@@ -77,7 +77,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
-            this.label3.Location = new System.Drawing.Point(129, 59);
+            this.label3.Location = new System.Drawing.Point(146, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 4;
@@ -110,7 +110,7 @@ namespace MusicApp.UI.UserControls.Sections
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
-            this.label6.Location = new System.Drawing.Point(778, 59);
+            this.label6.Location = new System.Drawing.Point(760, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 25);
             this.label6.TabIndex = 4;

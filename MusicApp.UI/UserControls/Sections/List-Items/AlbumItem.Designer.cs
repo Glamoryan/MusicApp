@@ -35,13 +35,14 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblAlbumTarihi = new System.Windows.Forms.Label();
             this.lblAlbumTuru = new System.Windows.Forms.Label();
             this.btnSec = new System.Windows.Forms.Button();
+            this.lblSayac = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MusicApp.UI.Properties.Resources.album;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(51, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -53,7 +54,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblAlbumAdi.AutoSize = true;
             this.lblAlbumAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAlbumAdi.ForeColor = System.Drawing.Color.White;
-            this.lblAlbumAdi.Location = new System.Drawing.Point(107, 19);
+            this.lblAlbumAdi.Location = new System.Drawing.Point(120, 19);
             this.lblAlbumAdi.Name = "lblAlbumAdi";
             this.lblAlbumAdi.Size = new System.Drawing.Size(83, 21);
             this.lblAlbumAdi.TabIndex = 1;
@@ -107,6 +108,17 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnSec.Text = "Seç";
             this.btnSec.UseVisualStyleBackColor = false;
             // 
+            // lblSayac
+            // 
+            this.lblSayac.AutoSize = true;
+            this.lblSayac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSayac.ForeColor = System.Drawing.Color.White;
+            this.lblSayac.Location = new System.Drawing.Point(22, 19);
+            this.lblSayac.Name = "lblSayac";
+            this.lblSayac.Size = new System.Drawing.Size(19, 21);
+            this.lblSayac.TabIndex = 1;
+            this.lblSayac.Text = "1";
+            // 
             // AlbumItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -116,6 +128,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.Controls.Add(this.lblAlbumTuru);
             this.Controls.Add(this.lblAlbumTarihi);
             this.Controls.Add(this.lblSanatciAdi);
+            this.Controls.Add(this.lblSayac);
             this.Controls.Add(this.lblAlbumAdi);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AlbumItem";
@@ -134,5 +147,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblAlbumTarihi;
         public System.Windows.Forms.Label lblAlbumTuru;
         public System.Windows.Forms.Button btnSec;
+        public System.Windows.Forms.Label lblSayac;
     }
 }

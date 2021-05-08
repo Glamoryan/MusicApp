@@ -74,6 +74,7 @@ namespace MusicApp.UI.UserControls.Sections
                 _kullaniciItem.lblRolAdi.Text = "Kullanıcı";
                 _kullaniciItem.lblAbonelikAdi.Text = abonelikAdi;
                 _kullaniciItem.lblUlkeAdi.Text = Utilities.textSinirla(kullanici.ulkeAdi);
+                _kullaniciItem.lblSayac.Text = (sayac + 1).ToString();
 
                 if (takipEdiliyorMu(kullanici))
                 {

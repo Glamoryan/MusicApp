@@ -121,14 +121,20 @@ namespace MusicApp.UI.UserControls.Sections
             {
                 foreach (Sarki sarki in grup.Sarkilar)
                 {
-                    topUlkeItem = new TopUlkeItem();
-                    topUlkeItem.Top = (ulkeSayac * 60);
-                    topUlkeItem.lblSarkiAdi.Text = Utilities.textSinirla(sarki.sarkiAdi, 10);
-                    topUlkeItem.lblDinlenme.Text = sarki.sarkiDinlenmesi.ToString();
-                    topUlkeItem.lblUlke.Text = sarki.sarkiUlke;
-                    topUlkeItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
-                    pnlUlke.Controls.Add(topUlkeItem);
-                    ulkeSayac++;
+                    if (ulkeSayac < 10)
+                    {
+                        topUlkeItem = new TopUlkeItem();
+                        topUlkeItem.Top = (ulkeSayac * 60);
+                        topUlkeItem.lblSarkiAdi.Text = Utilities.textSinirla(sarki.sarkiAdi, 10);
+                        topUlkeItem.lblDinlenme.Text = sarki.sarkiDinlenmesi.ToString();
+                        topUlkeItem.lblUlke.Text = sarki.sarkiUlke;
+                        topUlkeItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
+                        topUlkeItem.lblSayac.Text = (ulkeSayac + 1).ToString();
+                        pnlUlke.Controls.Add(topUlkeItem);
+                        ulkeSayac++;
+                    }
+                    else
+                        break;
                 }
             }
         }
@@ -158,7 +164,8 @@ namespace MusicApp.UI.UserControls.Sections
                 topGenelItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi);
                 topGenelItem.lblDinlenme.Text = sarki.sarkiDinlenmesi.ToString();
                 topGenelItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
-                topGenelItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);                
+                topGenelItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
+                topGenelItem.lblSayac.Text = (genelSayac + 1).ToString();
 
                 topSarkiItem = new TopSarkiItem();
                 topSarkiItem.lblSarkiAdi.Text = Utilities.textSinirla(sarki.sarkiAdi);

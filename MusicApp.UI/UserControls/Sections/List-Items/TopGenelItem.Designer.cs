@@ -35,13 +35,14 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblDinlenme = new System.Windows.Forms.Label();
             this.btnOynat = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
+            this.lblSayac = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MusicApp.UI.Properties.Resources.music;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(69, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -105,11 +106,23 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnEkle.TabIndex = 2;
             this.btnEkle.UseVisualStyleBackColor = true;
             // 
+            // lblSayac
+            // 
+            this.lblSayac.AutoSize = true;
+            this.lblSayac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSayac.ForeColor = System.Drawing.Color.White;
+            this.lblSayac.Location = new System.Drawing.Point(7, 22);
+            this.lblSayac.Name = "lblSayac";
+            this.lblSayac.Size = new System.Drawing.Size(19, 21);
+            this.lblSayac.TabIndex = 6;
+            this.lblSayac.Text = "1";
+            // 
             // TopGenelItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.lblSayac);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.btnOynat);
             this.Controls.Add(this.lblDinlenme);
@@ -132,5 +145,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblDinlenme;
         public System.Windows.Forms.Button btnOynat;
         public System.Windows.Forms.Button btnEkle;
+        public System.Windows.Forms.Label lblSayac;
     }
 }

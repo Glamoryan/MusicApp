@@ -132,16 +132,19 @@ namespace MusicApp.UI.UserControls.Sections
                     {
                         case "pop":
                             kullaniciCalmaListesiItem.Top = (popSayac * 60);
+                            kullaniciCalmaListesiItem.lblSayac.Text = (popSayac + 1).ToString();
                             pnlPop.Controls.Add(kullaniciCalmaListesiItem);
                             popSayac++;
                             break;
                         case "jazz":
                             kullaniciCalmaListesiItem.Top = (jazzSayac * 60);
+                            kullaniciCalmaListesiItem.lblSayac.Text = (jazzSayac + 1).ToString();
                             pnlJazz.Controls.Add(kullaniciCalmaListesiItem);
                             jazzSayac++;
                             break;
                         case "klasik":
                             kullaniciCalmaListesiItem.Top = (klasikSayac * 60);
+                            kullaniciCalmaListesiItem.lblSayac.Text = (klasikSayac + 1).ToString();
                             pnlKlasik.Controls.Add(kullaniciCalmaListesiItem);
                             klasikSayac++;
                             break;
@@ -169,6 +172,7 @@ namespace MusicApp.UI.UserControls.Sections
                     _takipItem.btnTakiptenCik.Click += (s, e) => takiptenCik(kullaniciTakip);
                     _takipItem.btnSec.Click += (s, e) => kullaniciCalmaListesiGetir(kullaniciTakip.kullaniciId);
                     _takipItem.btnTumunuEkle.Click += (s, e) => tumunuCalmaListesineEkle(kullaniciTakip.kullaniciId);
+                    _takipItem.lblSayac.Text = (sayac + 1).ToString();
                     pnlTakipler.Controls.Add(_takipItem);
                     sayac++;
                 }

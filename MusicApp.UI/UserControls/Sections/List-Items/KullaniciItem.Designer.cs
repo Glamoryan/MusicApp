@@ -35,13 +35,14 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblRolAdi = new System.Windows.Forms.Label();
             this.lblAbonelikAdi = new System.Windows.Forms.Label();
             this.btnTakip = new System.Windows.Forms.Button();
+            this.lblSayac = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MusicApp.UI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(52, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -53,7 +54,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblKullaniciAdi.AutoSize = true;
             this.lblKullaniciAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblKullaniciAdi.ForeColor = System.Drawing.Color.White;
-            this.lblKullaniciAdi.Location = new System.Drawing.Point(92, 16);
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(105, 16);
             this.lblKullaniciAdi.Name = "lblKullaniciAdi";
             this.lblKullaniciAdi.Size = new System.Drawing.Size(95, 21);
             this.lblKullaniciAdi.TabIndex = 2;
@@ -64,7 +65,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblUlkeAdi.AutoSize = true;
             this.lblUlkeAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUlkeAdi.ForeColor = System.Drawing.Color.White;
-            this.lblUlkeAdi.Location = new System.Drawing.Point(703, 16);
+            this.lblUlkeAdi.Location = new System.Drawing.Point(716, 16);
             this.lblUlkeAdi.Name = "lblUlkeAdi";
             this.lblUlkeAdi.Size = new System.Drawing.Size(41, 21);
             this.lblUlkeAdi.TabIndex = 2;
@@ -75,7 +76,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblRolAdi.AutoSize = true;
             this.lblRolAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRolAdi.ForeColor = System.Drawing.Color.White;
-            this.lblRolAdi.Location = new System.Drawing.Point(295, 16);
+            this.lblRolAdi.Location = new System.Drawing.Point(308, 16);
             this.lblRolAdi.Name = "lblRolAdi";
             this.lblRolAdi.Size = new System.Drawing.Size(60, 21);
             this.lblRolAdi.TabIndex = 2;
@@ -86,7 +87,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblAbonelikAdi.AutoSize = true;
             this.lblAbonelikAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAbonelikAdi.ForeColor = System.Drawing.Color.White;
-            this.lblAbonelikAdi.Location = new System.Drawing.Point(496, 16);
+            this.lblAbonelikAdi.Location = new System.Drawing.Point(509, 16);
             this.lblAbonelikAdi.Name = "lblAbonelikAdi";
             this.lblAbonelikAdi.Size = new System.Drawing.Size(107, 21);
             this.lblAbonelikAdi.TabIndex = 2;
@@ -107,11 +108,23 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnTakip.Text = "Takip Et";
             this.btnTakip.UseVisualStyleBackColor = false;
             // 
+            // lblSayac
+            // 
+            this.lblSayac.AutoSize = true;
+            this.lblSayac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSayac.ForeColor = System.Drawing.Color.White;
+            this.lblSayac.Location = new System.Drawing.Point(6, 16);
+            this.lblSayac.Name = "lblSayac";
+            this.lblSayac.Size = new System.Drawing.Size(19, 21);
+            this.lblSayac.TabIndex = 5;
+            this.lblSayac.Text = "1";
+            // 
             // KullaniciItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.lblSayac);
             this.Controls.Add(this.btnTakip);
             this.Controls.Add(this.lblUlkeAdi);
             this.Controls.Add(this.lblAbonelikAdi);
@@ -134,5 +147,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblRolAdi;
         public System.Windows.Forms.Label lblAbonelikAdi;
         public System.Windows.Forms.Button btnTakip;
+        public System.Windows.Forms.Label lblSayac;
     }
 }

@@ -32,6 +32,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblMuzikAdi = new System.Windows.Forms.Label();
             this.lblSanatciAdi = new System.Windows.Forms.Label();
             this.btnEkle = new System.Windows.Forms.Button();
+            this.lblSayac = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMuzikAdi
@@ -39,7 +40,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblMuzikAdi.AutoSize = true;
             this.lblMuzikAdi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMuzikAdi.ForeColor = System.Drawing.Color.White;
-            this.lblMuzikAdi.Location = new System.Drawing.Point(13, 15);
+            this.lblMuzikAdi.Location = new System.Drawing.Point(57, 14);
             this.lblMuzikAdi.Name = "lblMuzikAdi";
             this.lblMuzikAdi.Size = new System.Drawing.Size(75, 20);
             this.lblMuzikAdi.TabIndex = 0;
@@ -50,7 +51,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblSanatciAdi.AutoSize = true;
             this.lblSanatciAdi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSanatciAdi.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblSanatciAdi.Location = new System.Drawing.Point(137, 15);
+            this.lblSanatciAdi.Location = new System.Drawing.Point(181, 14);
             this.lblSanatciAdi.Name = "lblSanatciAdi";
             this.lblSanatciAdi.Size = new System.Drawing.Size(84, 20);
             this.lblSanatciAdi.TabIndex = 0;
@@ -69,11 +70,23 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnEkle.TabIndex = 1;
             this.btnEkle.UseVisualStyleBackColor = false;
             // 
+            // lblSayac
+            // 
+            this.lblSayac.AutoSize = true;
+            this.lblSayac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSayac.ForeColor = System.Drawing.Color.White;
+            this.lblSayac.Location = new System.Drawing.Point(19, 14);
+            this.lblSayac.Name = "lblSayac";
+            this.lblSayac.Size = new System.Drawing.Size(19, 21);
+            this.lblSayac.TabIndex = 4;
+            this.lblSayac.Text = "1";
+            // 
             // KullaniciCalmaListesiItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.lblSayac);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.lblSanatciAdi);
             this.Controls.Add(this.lblMuzikAdi);
@@ -89,5 +102,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblMuzikAdi;
         public System.Windows.Forms.Label lblSanatciAdi;
         public System.Windows.Forms.Button btnEkle;
+        public System.Windows.Forms.Label lblSayac;
     }
 }

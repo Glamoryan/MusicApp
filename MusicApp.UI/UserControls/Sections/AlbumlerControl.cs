@@ -146,6 +146,7 @@ namespace MusicApp.UI.UserControls.Sections
                 _albumItem.lblAlbumTarihi.Text = album.albumTarih.ToShortDateString();
                 _albumItem.lblAlbumTuru.Text = _turService.TurGetir(albumDetay[0].turId).turAdi;
                 _albumItem.btnSec.Click += (s, e) => albumSarkilariniGetir(album);
+                _albumItem.lblSayac.Text = (sayac + 1).ToString();
                 pnlAlbumler.Controls.Add(_albumItem);
                 sayac++;
             }

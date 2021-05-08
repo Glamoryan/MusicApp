@@ -33,6 +33,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblDinlenme = new System.Windows.Forms.Label();
             this.lblUlke = new System.Windows.Forms.Label();
             this.btnOynat = new System.Windows.Forms.Button();
+            this.lblSayac = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblSarkiAdi
@@ -40,7 +41,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblSarkiAdi.AutoSize = true;
             this.lblSarkiAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSarkiAdi.ForeColor = System.Drawing.Color.White;
-            this.lblSarkiAdi.Location = new System.Drawing.Point(11, 18);
+            this.lblSarkiAdi.Location = new System.Drawing.Point(42, 18);
             this.lblSarkiAdi.Name = "lblSarkiAdi";
             this.lblSarkiAdi.Size = new System.Drawing.Size(72, 21);
             this.lblSarkiAdi.TabIndex = 1;
@@ -51,7 +52,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblDinlenme.AutoSize = true;
             this.lblDinlenme.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDinlenme.ForeColor = System.Drawing.Color.White;
-            this.lblDinlenme.Location = new System.Drawing.Point(124, 18);
+            this.lblDinlenme.Location = new System.Drawing.Point(151, 18);
             this.lblDinlenme.Name = "lblDinlenme";
             this.lblDinlenme.Size = new System.Drawing.Size(19, 21);
             this.lblDinlenme.TabIndex = 1;
@@ -80,11 +81,23 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnOynat.TabIndex = 4;
             this.btnOynat.UseVisualStyleBackColor = true;
             // 
+            // lblSayac
+            // 
+            this.lblSayac.AutoSize = true;
+            this.lblSayac.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSayac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.lblSayac.Location = new System.Drawing.Point(12, 18);
+            this.lblSayac.Name = "lblSayac";
+            this.lblSayac.Size = new System.Drawing.Size(19, 21);
+            this.lblSayac.TabIndex = 6;
+            this.lblSayac.Text = "1";
+            // 
             // TopUlkeItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.lblSayac);
             this.Controls.Add(this.btnOynat);
             this.Controls.Add(this.lblUlke);
             this.Controls.Add(this.lblDinlenme);
@@ -102,5 +115,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblDinlenme;
         public System.Windows.Forms.Label lblUlke;
         public System.Windows.Forms.Button btnOynat;
+        public System.Windows.Forms.Label lblSayac;
     }
 }
