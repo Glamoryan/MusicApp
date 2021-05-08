@@ -21,6 +21,42 @@ namespace MusicApp.UI.UserControls.Player
             return _mediaPlayer;
         }
 
+        private static void oynaticiDurum()
+        {
+            switch (_mediaPlayer.playState)
+            {
+                case WMPPlayState.wmppsUndefined:
+                    break;
+                case WMPPlayState.wmppsStopped:
+                    caliyorMu = false;
+                    break;
+                case WMPPlayState.wmppsPaused:                    
+                    break;
+                case WMPPlayState.wmppsPlaying:
+                    break;
+                case WMPPlayState.wmppsScanForward:
+                    break;
+                case WMPPlayState.wmppsScanReverse:
+                    break;
+                case WMPPlayState.wmppsBuffering:
+                    break;
+                case WMPPlayState.wmppsWaiting:
+                    break;
+                case WMPPlayState.wmppsMediaEnded:
+                    break;
+                case WMPPlayState.wmppsTransitioning:
+                    break;
+                case WMPPlayState.wmppsReady:
+                    break;
+                case WMPPlayState.wmppsReconnecting:
+                    break;
+                case WMPPlayState.wmppsLast:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public static string GetSesDuzeyi()
         {
             return _mediaPlayer.settings.volume.ToString();
@@ -40,6 +76,7 @@ namespace MusicApp.UI.UserControls.Player
             if (_mediaPlayer == null)
             {
                 _mediaPlayer = new WindowsMediaPlayer();
+                _mediaPlayer.PlayStateChange += (e) => oynaticiDurum();
                 _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
             }
                 

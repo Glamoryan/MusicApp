@@ -19,6 +19,7 @@ namespace MusicApp.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.sarkiYolu).HasColumnName("sarkiYolu");
             Property(x => x.sarkiDinlenmesi).HasColumnName("sarkiDinlenmesi");
             Property(x => x.sarkiUlke).HasColumnName("sarkiUlke");
+            Property(x => x.sarkiTarih).HasColumnName("sarkiTarih");
         }
     }
 }

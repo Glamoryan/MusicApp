@@ -29,6 +29,7 @@ namespace MusicApp.UI.UserControls.Sections
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnOnceki = new System.Windows.Forms.Button();
             this.btnSonraki = new System.Windows.Forms.Button();
@@ -40,6 +41,10 @@ namespace MusicApp.UI.UserControls.Sections
             this.btnSesYukselt = new System.Windows.Forms.Button();
             this.btnSesDusur = new System.Windows.Forms.Button();
             this.lblSesDuzey = new System.Windows.Forms.Label();
+            this.pgbSure = new System.Windows.Forms.ProgressBar();
+            this.tmrSureSayac = new System.Windows.Forms.Timer(this.components);
+            this.lblSure = new System.Windows.Forms.Label();
+            this.lblSarkiSure = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbxCikis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -176,16 +181,56 @@ namespace MusicApp.UI.UserControls.Sections
             this.lblSesDuzey.TabIndex = 9;
             this.lblSesDuzey.Text = "-";
             // 
+            // pgbSure
+            // 
+            this.pgbSure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(81)))), ((int)(((byte)(251)))));
+            this.pgbSure.Location = new System.Drawing.Point(764, 41);
+            this.pgbSure.Name = "pgbSure";
+            this.pgbSure.Size = new System.Drawing.Size(483, 12);
+            this.pgbSure.Step = 30;
+            this.pgbSure.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pgbSure.TabIndex = 10;
+            // 
+            // tmrSureSayac
+            // 
+            this.tmrSureSayac.Interval = 1000;
+            this.tmrSureSayac.Tick += new System.EventHandler(this.tmrSureSayac_Tick);
+            // 
+            // lblSure
+            // 
+            this.lblSure.AutoSize = true;
+            this.lblSure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSure.ForeColor = System.Drawing.Color.White;
+            this.lblSure.Location = new System.Drawing.Point(725, 39);
+            this.lblSure.Name = "lblSure";
+            this.lblSure.Size = new System.Drawing.Size(28, 15);
+            this.lblSure.TabIndex = 5;
+            this.lblSure.Text = "0:00";
+            // 
+            // lblSarkiSure
+            // 
+            this.lblSarkiSure.AutoSize = true;
+            this.lblSarkiSure.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSarkiSure.ForeColor = System.Drawing.Color.White;
+            this.lblSarkiSure.Location = new System.Drawing.Point(1253, 39);
+            this.lblSarkiSure.Name = "lblSarkiSure";
+            this.lblSarkiSure.Size = new System.Drawing.Size(28, 15);
+            this.lblSarkiSure.TabIndex = 5;
+            this.lblSarkiSure.Text = "0:00";
+            // 
             // OynaticiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(16)))));
+            this.Controls.Add(this.pgbSure);
             this.Controls.Add(this.lblSesDuzey);
             this.Controls.Add(this.btnSesDusur);
             this.Controls.Add(this.btnSesYukselt);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pcbxCikis);
+            this.Controls.Add(this.lblSarkiSure);
+            this.Controls.Add(this.lblSure);
             this.Controls.Add(this.lblSanatciAdi);
             this.Controls.Add(this.lblMuzikAdi);
             this.Controls.Add(this.pictureBox1);
@@ -214,5 +259,9 @@ namespace MusicApp.UI.UserControls.Sections
         public System.Windows.Forms.Button btnSesDusur;
         public System.Windows.Forms.Label lblSesDuzey;
         public System.Windows.Forms.PictureBox pcbxCikis;
+        public System.Windows.Forms.ProgressBar pgbSure;
+        public System.Windows.Forms.Timer tmrSureSayac;
+        public System.Windows.Forms.Label lblSure;
+        public System.Windows.Forms.Label lblSarkiSure;
     }
 }

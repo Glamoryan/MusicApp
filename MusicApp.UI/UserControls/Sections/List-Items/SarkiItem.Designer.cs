@@ -37,6 +37,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblTurAdi = new System.Windows.Forms.Label();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lblSayac = new System.Windows.Forms.Label();
+            this.lblSarkiTarih = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +67,11 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblIzlenmeSayisi.AutoSize = true;
             this.lblIzlenmeSayisi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIzlenmeSayisi.ForeColor = System.Drawing.Color.White;
-            this.lblIzlenmeSayisi.Location = new System.Drawing.Point(680, 17);
+            this.lblIzlenmeSayisi.Location = new System.Drawing.Point(829, 17);
             this.lblIzlenmeSayisi.Name = "lblIzlenmeSayisi";
-            this.lblIzlenmeSayisi.Size = new System.Drawing.Size(106, 21);
+            this.lblIzlenmeSayisi.Size = new System.Drawing.Size(19, 21);
             this.lblIzlenmeSayisi.TabIndex = 1;
-            this.lblIzlenmeSayisi.Text = "İzlenme sayısı";
+            this.lblIzlenmeSayisi.Text = "0";
             // 
             // btnOynat
             // 
@@ -78,9 +79,9 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnOynat.FlatAppearance.BorderSize = 0;
             this.btnOynat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOynat.Image = global::MusicApp.UI.Properties.Resources.play;
-            this.btnOynat.Location = new System.Drawing.Point(904, 0);
+            this.btnOynat.Location = new System.Drawing.Point(969, 0);
             this.btnOynat.Name = "btnOynat";
-            this.btnOynat.Size = new System.Drawing.Size(91, 52);
+            this.btnOynat.Size = new System.Drawing.Size(51, 52);
             this.btnOynat.TabIndex = 2;
             this.btnOynat.UseVisualStyleBackColor = true;
             // 
@@ -112,9 +113,9 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.btnEkle.FlatAppearance.BorderSize = 0;
             this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkle.Image = global::MusicApp.UI.Properties.Resources.add;
-            this.btnEkle.Location = new System.Drawing.Point(816, 0);
+            this.btnEkle.Location = new System.Drawing.Point(912, 0);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(82, 52);
+            this.btnEkle.Size = new System.Drawing.Size(51, 52);
             this.btnEkle.TabIndex = 3;
             this.btnEkle.UseVisualStyleBackColor = true;
             // 
@@ -129,6 +130,17 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.lblSayac.TabIndex = 5;
             this.lblSayac.Text = "1";
             // 
+            // lblSarkiTarih
+            // 
+            this.lblSarkiTarih.AutoSize = true;
+            this.lblSarkiTarih.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSarkiTarih.ForeColor = System.Drawing.Color.White;
+            this.lblSarkiTarih.Location = new System.Drawing.Point(657, 17);
+            this.lblSarkiTarih.Name = "lblSarkiTarih";
+            this.lblSarkiTarih.Size = new System.Drawing.Size(86, 21);
+            this.lblSarkiTarih.TabIndex = 1;
+            this.lblSarkiTarih.Text = "Şarkı Tarihi";
+            // 
             // SarkiItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -138,6 +150,7 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.btnOynat);
             this.Controls.Add(this.lblIzlenmeSayisi);
+            this.Controls.Add(this.lblSarkiTarih);
             this.Controls.Add(this.lblTurAdi);
             this.Controls.Add(this.lblSanatciAdi);
             this.Controls.Add(this.lblMuzikAdi);
@@ -161,5 +174,6 @@ namespace MusicApp.UI.UserControls.Sections.List_Items
         public System.Windows.Forms.Label lblTurAdi;
         public System.Windows.Forms.Button btnEkle;
         public System.Windows.Forms.Label lblSayac;
+        public System.Windows.Forms.Label lblSarkiTarih;
     }
 }

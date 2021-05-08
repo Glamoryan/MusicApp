@@ -44,7 +44,7 @@ namespace MusicApp.UI.UserControls.Sections
             oynaticiControl.btnSesYukselt.Enabled = true;
             oynaticiControl.btnSesYukselt.Click += (s, e) => Oynatici.sesYukselt(oynaticiControl.lblSesDuzey);
             oynaticiControl.btnSesDusur.Enabled = true;
-            oynaticiControl.btnSesDusur.Click += (s, e) => Oynatici.sesDusur(oynaticiControl.lblSesDuzey);
+            oynaticiControl.btnSesDusur.Click += (s, e) => Oynatici.sesDusur(oynaticiControl.lblSesDuzey);            
 
             if (sarkiButonu != ilkButton && ilkButton != null)
                 ilkButton.Image = Properties.Resources.play;
@@ -66,7 +66,7 @@ namespace MusicApp.UI.UserControls.Sections
         private void oynaticiyiAktifEt(Sarki sarki, Button sarkiButonu)
         {            
             Oynatici.oynaticiBaslat(sarki);
-            oynaticiyiGuncelle(sarkiButonu);                        
+            oynaticiyiGuncelle(sarkiButonu);            
         }
 
         private bool calmaListesindeVarmi(Sarki sarki)
@@ -115,6 +115,7 @@ namespace MusicApp.UI.UserControls.Sections
                 _sarkiItem.lblSanatciAdi.Text = Utilities.textSinirla(_sanatciService.SanatciGetir(sarki.sanatciId).sanatciAdi, 15);
                 _sarkiItem.lblTurAdi.Text = _turService.TurGetir(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId).turId).turAdi;
                 _sarkiItem.lblIzlenmeSayisi.Text = sarki.sarkiDinlenmesi.ToString();
+                _sarkiItem.lblSarkiTarih.Text = sarki.sarkiTarih.ToShortDateString();
                 _sarkiItem.btnOynat.Click += (s, e) => oynaticiyiAktifEt(sarki, s as Button);
                 _sarkiItem.btnEkle.Click += (s, e) => calmaListesineEkle(sarki);
                 _sarkiItem.lblSayac.Text = (sayac + 1).ToString();
