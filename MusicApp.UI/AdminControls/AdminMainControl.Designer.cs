@@ -88,6 +88,7 @@ namespace MusicApp.UI.AdminControls
             this.btnSanatcilar.TabIndex = 2;
             this.btnSanatcilar.Text = "Sanatçılar";
             this.btnSanatcilar.UseVisualStyleBackColor = false;
+            this.btnSanatcilar.Click += new System.EventHandler(this.btnSanatcilar_Click);
             // 
             // btnSarkilar
             // 
