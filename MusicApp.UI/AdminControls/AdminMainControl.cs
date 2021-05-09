@@ -9,6 +9,7 @@ namespace MusicApp.UI.AdminControls
     public partial class AdminMainControl : UserControl
     {
         private KullanicilarControl _kullanicilarControl;
+        private SarkilarControl _sarkilarControl;
 
         public AdminMainControl()
         {
@@ -28,6 +29,14 @@ namespace MusicApp.UI.AdminControls
             Utilities.icerikDegistir(pnlAdminContent, _kullanicilarControl);
         }
 
+        private void sarkiEkraniGetir()
+        {
+            if (_sarkilarControl == null)
+                _sarkilarControl = new SarkilarControl();
+
+            Utilities.icerikDegistir(pnlAdminContent, _sarkilarControl);
+        }
+
         private void AdminMainControl_Load(object sender, EventArgs e)
         {
             bilgiYazdir();
@@ -37,6 +46,11 @@ namespace MusicApp.UI.AdminControls
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
             kullaniciEkraniGetir();
+        }
+
+        private void btnSarkilar_Click(object sender, EventArgs e)
+        {
+            sarkiEkraniGetir();
         }
     }
 }
