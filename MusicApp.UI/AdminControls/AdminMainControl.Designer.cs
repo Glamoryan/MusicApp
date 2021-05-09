@@ -30,7 +30,10 @@ namespace MusicApp.UI.AdminControls
         private void InitializeComponent()
         {
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAlbumler = new System.Windows.Forms.Button();
+            this.btnSanatcilar = new System.Windows.Forms.Button();
+            this.btnSarkilar = new System.Windows.Forms.Button();
+            this.btnKullanicilar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlAdminContent = new System.Windows.Forms.Panel();
@@ -45,7 +48,10 @@ namespace MusicApp.UI.AdminControls
             // 
             // pnlHeader
             // 
-            this.pnlHeader.Controls.Add(this.button1);
+            this.pnlHeader.Controls.Add(this.btnAlbumler);
+            this.pnlHeader.Controls.Add(this.btnSanatcilar);
+            this.pnlHeader.Controls.Add(this.btnSarkilar);
+            this.pnlHeader.Controls.Add(this.btnKullanicilar);
             this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
@@ -53,20 +59,66 @@ namespace MusicApp.UI.AdminControls
             this.pnlHeader.Size = new System.Drawing.Size(1358, 100);
             this.pnlHeader.TabIndex = 0;
             // 
-            // button1
+            // btnAlbumler
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
-            this.button1.Location = new System.Drawing.Point(349, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 46);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Kullanıcılar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAlbumler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.btnAlbumler.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlbumler.FlatAppearance.BorderSize = 0;
+            this.btnAlbumler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlbumler.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAlbumler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnAlbumler.Location = new System.Drawing.Point(835, 27);
+            this.btnAlbumler.Name = "btnAlbumler";
+            this.btnAlbumler.Size = new System.Drawing.Size(156, 46);
+            this.btnAlbumler.TabIndex = 2;
+            this.btnAlbumler.Text = "Albümler";
+            this.btnAlbumler.UseVisualStyleBackColor = false;
+            // 
+            // btnSanatcilar
+            // 
+            this.btnSanatcilar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.btnSanatcilar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSanatcilar.FlatAppearance.BorderSize = 0;
+            this.btnSanatcilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanatcilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSanatcilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnSanatcilar.Location = new System.Drawing.Point(673, 27);
+            this.btnSanatcilar.Name = "btnSanatcilar";
+            this.btnSanatcilar.Size = new System.Drawing.Size(156, 46);
+            this.btnSanatcilar.TabIndex = 2;
+            this.btnSanatcilar.Text = "Sanatçılar";
+            this.btnSanatcilar.UseVisualStyleBackColor = false;
+            // 
+            // btnSarkilar
+            // 
+            this.btnSarkilar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.btnSarkilar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSarkilar.FlatAppearance.BorderSize = 0;
+            this.btnSarkilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSarkilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSarkilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnSarkilar.Location = new System.Drawing.Point(511, 27);
+            this.btnSarkilar.Name = "btnSarkilar";
+            this.btnSarkilar.Size = new System.Drawing.Size(156, 46);
+            this.btnSarkilar.TabIndex = 2;
+            this.btnSarkilar.Text = "Şarkılar";
+            this.btnSarkilar.UseVisualStyleBackColor = false;
+            // 
+            // btnKullanicilar
+            // 
+            this.btnKullanicilar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.btnKullanicilar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKullanicilar.FlatAppearance.BorderSize = 0;
+            this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKullanicilar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnKullanicilar.Location = new System.Drawing.Point(349, 27);
+            this.btnKullanicilar.Name = "btnKullanicilar";
+            this.btnKullanicilar.Size = new System.Drawing.Size(156, 46);
+            this.btnKullanicilar.TabIndex = 2;
+            this.btnKullanicilar.Text = "Kullanıcılar";
+            this.btnKullanicilar.UseVisualStyleBackColor = false;
+            this.btnKullanicilar.Click += new System.EventHandler(this.btnKullanicilar_Click);
             // 
             // label1
             // 
@@ -112,7 +164,7 @@ namespace MusicApp.UI.AdminControls
             this.lblKullaniciAdi.AutoSize = true;
             this.lblKullaniciAdi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblKullaniciAdi.ForeColor = System.Drawing.Color.White;
-            this.lblKullaniciAdi.Location = new System.Drawing.Point(114, 17);
+            this.lblKullaniciAdi.Location = new System.Drawing.Point(97, 16);
             this.lblKullaniciAdi.Name = "lblKullaniciAdi";
             this.lblKullaniciAdi.Size = new System.Drawing.Size(95, 21);
             this.lblKullaniciAdi.TabIndex = 2;
@@ -124,7 +176,7 @@ namespace MusicApp.UI.AdminControls
             this.btnCik.FlatAppearance.BorderSize = 0;
             this.btnCik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCik.Image = global::MusicApp.UI.Properties.Resources.exit;
-            this.btnCik.Location = new System.Drawing.Point(1301, 9);
+            this.btnCik.Location = new System.Drawing.Point(1301, 7);
             this.btnCik.Name = "btnCik";
             this.btnCik.Size = new System.Drawing.Size(44, 40);
             this.btnCik.TabIndex = 0;
@@ -151,6 +203,7 @@ namespace MusicApp.UI.AdminControls
             this.Controls.Add(this.pnlHeader);
             this.Name = "AdminMainControl";
             this.Size = new System.Drawing.Size(1358, 732);
+            this.Load += new System.EventHandler(this.AdminMainControl_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -160,16 +213,18 @@ namespace MusicApp.UI.AdminControls
 
         }
 
-        #endregion
-        private System.Windows.Forms.Panel pnlContent;
+        #endregion      
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Panel pnlAdminContent;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnKullanicilar;
         private System.Windows.Forms.Button btnCik;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblKullaniciAdi;
+        private System.Windows.Forms.Button btnSarkilar;
+        private System.Windows.Forms.Button btnSanatcilar;
+        private System.Windows.Forms.Button btnAlbumler;
     }
 }
