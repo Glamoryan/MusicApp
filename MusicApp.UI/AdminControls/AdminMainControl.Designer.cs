@@ -73,6 +73,7 @@ namespace MusicApp.UI.AdminControls
             this.btnAlbumler.TabIndex = 2;
             this.btnAlbumler.Text = "Albümler";
             this.btnAlbumler.UseVisualStyleBackColor = false;
+            this.btnAlbumler.Click += new System.EventHandler(this.btnAlbumler_Click);
             // 
             // btnSanatcilar
             // 
