@@ -159,6 +159,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.btnIptal.TabIndex = 3;
             this.btnIptal.Text = "İptal";
             this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // btnKaydet
             // 
@@ -174,6 +175,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label5
             // 
@@ -206,6 +208,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.Controls.Add(this.lblKullaniciAdi);
             this.Name = "KullaniciEdit";
             this.Size = new System.Drawing.Size(1358, 573);
+            this.Load += new System.EventHandler(this.KullaniciEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

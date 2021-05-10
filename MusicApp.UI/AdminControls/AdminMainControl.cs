@@ -25,33 +25,25 @@ namespace MusicApp.UI.AdminControls
 
         private void kullaniciEkraniGetir()
         {
-            if (_kullanicilarControl == null)
-                _kullanicilarControl = new KullanicilarControl();
-
+            _kullanicilarControl = new KullanicilarControl();
             Utilities.icerikDegistir(pnlAdminContent, _kullanicilarControl);
         }
 
         private void sanatciEkraniGetir()
         {
-            if (_sanatcilarControl == null)
-                _sanatcilarControl = new SanatcilarControl();
-
+            _sanatcilarControl = new SanatcilarControl();
             Utilities.icerikDegistir(pnlAdminContent, _sanatcilarControl);
         }
 
         private void albumEkraniGetir()
         {
-            if (_albumlerControl == null)
-                _albumlerControl = new AlbumlerControl();
-
+            _albumlerControl = new AlbumlerControl();
             Utilities.icerikDegistir(pnlAdminContent, _albumlerControl);
         }
 
         private void sarkiEkraniGetir()
         {
-            if (_sarkilarControl == null)
-                _sarkilarControl = new SarkilarControl();
-
+            _sarkilarControl = new SarkilarControl();
             Utilities.icerikDegistir(pnlAdminContent, _sarkilarControl);
         }
 
@@ -59,7 +51,7 @@ namespace MusicApp.UI.AdminControls
         {
             DialogResult sonuc = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış Yap?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
-            {                
+            {
                 LoginManager.etkinKullanici = null;
                 Form suankiForm = FindForm();
                 suankiForm.Hide();

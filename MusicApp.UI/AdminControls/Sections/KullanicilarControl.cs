@@ -21,21 +21,10 @@ namespace MusicApp.UI.AdminControls.Sections
             _kullaniciService = InstanceFactory.GetInstance<IKullaniciService>();
             _rolService = InstanceFactory.GetInstance<IRolService>();
         }
-
-        private void kullaniciDuzenle(Kullanici kullanici)
-        {
-            var roller = new BindingSource();
-            roller.DataSource = _rolService.TumRolleriGetir();
-
-            KullaniciEdit kullaniciEdit = new KullaniciEdit();            
-            kullaniciEdit.tbxKullaniciAdi.Text = kullanici.kullaniciAdi;
-            kullaniciEdit.tbxSifre.Text = kullanici.kullaniciSifre;
-            kullaniciEdit.tbxUlke.Text = kullanici.ulkeAdi;
-            kullaniciEdit.tbxMail.Text = kullanici.kullaniciMail;
-            kullaniciEdit.cbxRol.DataSource = roller.DataSource;
-            kullaniciEdit.cbxRol.DisplayMember = "rolAdi";
-            kullaniciEdit.cbxRol.ValueMember = "id";                       
-            kullaniciEdit.cbxRol.SelectedValue = kullanici.rolId;
+     
+        private void kullaniciDuzenleEkraniGetir(Kullanici kullanici)
+        {            
+            KullaniciEdit kullaniciEdit = new KullaniciEdit(kullanici);                        
 
             Utilities.icerikDegistir(Parent, kullaniciEdit);
         }
@@ -57,7 +46,7 @@ namespace MusicApp.UI.AdminControls.Sections
                 kullaniciItem.lblKullaniciRol.Text = _rolService.RolGetir(kullanici.rolId).rolAdi;
                 kullaniciItem.lblKullaniciMail.Text = kullanici.kullaniciMail;
                 kullaniciItem.lblKullaniciUlke.Text = kullanici.ulkeAdi;
-                kullaniciItem.btnDuzenle.Click += (s, e) => kullaniciDuzenle(kullanici);
+                kullaniciItem.btnDuzenle.Click += (s, e) => kullaniciDuzenleEkraniGetir(kullanici);
                 pnlKullanici.Controls.Add(kullaniciItem);
                 sayac++;
             }
