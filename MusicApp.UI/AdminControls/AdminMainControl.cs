@@ -55,6 +55,20 @@ namespace MusicApp.UI.AdminControls
             Utilities.icerikDegistir(pnlAdminContent, _sarkilarControl);
         }
 
+        private void CikisYap()
+        {
+            DialogResult sonuc = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış Yap?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {                
+                LoginManager.etkinKullanici = null;
+                Form suankiForm = FindForm();
+                suankiForm.Hide();
+                var girisForm = new signForm();
+                girisForm.FormClosed += (s, args) => suankiForm.Close();
+                girisForm.Show();
+            }
+        }
+
         private void AdminMainControl_Load(object sender, EventArgs e)
         {
             bilgiYazdir();
@@ -79,6 +93,11 @@ namespace MusicApp.UI.AdminControls
         private void btnAlbumler_Click(object sender, EventArgs e)
         {
             albumEkraniGetir();
+        }
+
+        private void btnCik_Click(object sender, EventArgs e)
+        {
+            CikisYap();
         }
     }
 }

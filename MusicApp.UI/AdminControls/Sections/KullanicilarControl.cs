@@ -1,14 +1,11 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.AdminControls.Sections.Edit_Controls;
 using MusicApp.UI.AdminControls.Sections.List_Items;
 using MusicApp.UI.Tools;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace MusicApp.UI.AdminControls.Sections
@@ -23,6 +20,24 @@ namespace MusicApp.UI.AdminControls.Sections
             InitializeComponent();
             _kullaniciService = InstanceFactory.GetInstance<IKullaniciService>();
             _rolService = InstanceFactory.GetInstance<IRolService>();
+        }
+
+        private void kullaniciDuzenle(Kullanici kullanici)
+        {
+            var roller = new BindingSource();
+            roller.DataSource = _rolService.TumRolleriGetir();
+
+            KullaniciEdit kullaniciEdit = new KullaniciEdit();            
+            kullaniciEdit.tbxKullaniciAdi.Text = kullanici.kullaniciAdi;
+            kullaniciEdit.tbxSifre.Text = kullanici.kullaniciSifre;
+            kullaniciEdit.tbxUlke.Text = kullanici.ulkeAdi;
+            kullaniciEdit.tbxMail.Text = kullanici.kullaniciMail;
+            kullaniciEdit.cbxRol.DataSource = roller.DataSource;
+            kullaniciEdit.cbxRol.DisplayMember = "rolAdi";
+            kullaniciEdit.cbxRol.ValueMember = "id";                       
+            kullaniciEdit.cbxRol.SelectedValue = kullanici.rolId;
+
+            Utilities.icerikDegistir(Parent, kullaniciEdit);
         }
 
         private void kullanicilariGetir()
@@ -42,6 +57,7 @@ namespace MusicApp.UI.AdminControls.Sections
                 kullaniciItem.lblKullaniciRol.Text = _rolService.RolGetir(kullanici.rolId).rolAdi;
                 kullaniciItem.lblKullaniciMail.Text = kullanici.kullaniciMail;
                 kullaniciItem.lblKullaniciUlke.Text = kullanici.ulkeAdi;
+                kullaniciItem.btnDuzenle.Click += (s, e) => kullaniciDuzenle(kullanici);
                 pnlKullanici.Controls.Add(kullaniciItem);
                 sayac++;
             }

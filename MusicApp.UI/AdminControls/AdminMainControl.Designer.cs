@@ -184,6 +184,7 @@ namespace MusicApp.UI.AdminControls
             this.btnCik.Size = new System.Drawing.Size(44, 40);
             this.btnCik.TabIndex = 0;
             this.btnCik.UseVisualStyleBackColor = true;
+            this.btnCik.Click += new System.EventHandler(this.btnCik_Click);
             // 
             // label2
             // 
