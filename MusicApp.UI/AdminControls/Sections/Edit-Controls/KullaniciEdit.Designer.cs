@@ -41,7 +41,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.tbxUlke = new System.Windows.Forms.TextBox();
             this.btnIptal = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblBaslik = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblKullaniciAdi
@@ -177,16 +177,16 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // label5
+            // lblBaslik
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
-            this.label5.Location = new System.Drawing.Point(133, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 32);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Kullanıcı Düzenle";
+            this.lblBaslik.AutoSize = true;
+            this.lblBaslik.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBaslik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.lblBaslik.Location = new System.Drawing.Point(133, 35);
+            this.lblBaslik.Name = "lblBaslik";
+            this.lblBaslik.Size = new System.Drawing.Size(213, 32);
+            this.lblBaslik.TabIndex = 0;
+            this.lblBaslik.Text = "Kullanıcı Düzenle";
             // 
             // KullaniciEdit
             // 
@@ -204,7 +204,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.lblKullaniciAdi);
             this.Name = "KullaniciEdit";
             this.Size = new System.Drawing.Size(1358, 573);
@@ -228,6 +228,6 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
         public System.Windows.Forms.TextBox tbxUlke;
         public System.Windows.Forms.Button btnIptal;
         public System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblBaslik;
     }
 }

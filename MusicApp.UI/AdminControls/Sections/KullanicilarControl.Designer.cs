@@ -36,6 +36,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label5 = new System.Windows.Forms.Label();
             this.pnlKullanici = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnKullaniciEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,11 +112,28 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label6.TabIndex = 0;
             this.label6.Text = "Kullanıcılar";
             // 
+            // btnKullaniciEkle
+            // 
+            this.btnKullaniciEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnKullaniciEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKullaniciEkle.FlatAppearance.BorderSize = 0;
+            this.btnKullaniciEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKullaniciEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKullaniciEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnKullaniciEkle.Location = new System.Drawing.Point(36, 324);
+            this.btnKullaniciEkle.Name = "btnKullaniciEkle";
+            this.btnKullaniciEkle.Size = new System.Drawing.Size(110, 73);
+            this.btnKullaniciEkle.TabIndex = 2;
+            this.btnKullaniciEkle.Text = "Kullanıcı Ekle";
+            this.btnKullaniciEkle.UseVisualStyleBackColor = false;
+            this.btnKullaniciEkle.Click += new System.EventHandler(this.btnKullaniciEkle_Click);
+            // 
             // KullanicilarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnKullaniciEkle);
             this.Controls.Add(this.pnlKullanici);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -140,5 +158,6 @@ namespace MusicApp.UI.AdminControls.Sections
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlKullanici;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnKullaniciEkle;
     }
 }

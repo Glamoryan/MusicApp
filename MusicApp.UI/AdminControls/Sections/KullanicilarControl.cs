@@ -29,6 +29,19 @@ namespace MusicApp.UI.AdminControls.Sections
             Utilities.icerikDegistir(Parent, kullaniciEdit);
         }
 
+        private void kullaniciSil(Kullanici kullanici)
+        {
+            DialogResult sonuc = MessageBox.Show("Kullanıcı silinsin mi?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(sonuc == DialogResult.Yes)
+            {
+                _kullaniciService.KullaniciSil(kullanici);
+                MessageBox.Show("Kullanıcı silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Controls.Clear();
+                Controls.Add(new KullanicilarControl());
+            }
+        }
+
         private void kullanicilariGetir()
         {
             pnlKullanici.Controls.Clear();
@@ -47,15 +60,28 @@ namespace MusicApp.UI.AdminControls.Sections
                 kullaniciItem.lblKullaniciMail.Text = kullanici.kullaniciMail;
                 kullaniciItem.lblKullaniciUlke.Text = kullanici.ulkeAdi;
                 kullaniciItem.btnDuzenle.Click += (s, e) => kullaniciDuzenleEkraniGetir(kullanici);
+                kullaniciItem.btnSil.Click += (s, e) => kullaniciSil(kullanici);
                 pnlKullanici.Controls.Add(kullaniciItem);
                 sayac++;
             }
+        }
+
+        private void kullaniciEkleEkraniGetir()
+        {
+            KullaniciAdd kullaniciAdd = new KullaniciAdd();
+
+            Utilities.icerikDegistir(Parent, kullaniciAdd);
         }
 
         private void KullanicilarControl_Load(object sender, EventArgs e)
         {
             Utilities.scroolbarEkle(pnlKullanici);
             kullanicilariGetir();
+        }
+
+        private void btnKullaniciEkle_Click(object sender, EventArgs e)
+        {
+            kullaniciEkleEkraniGetir();
         }
     }
 }
