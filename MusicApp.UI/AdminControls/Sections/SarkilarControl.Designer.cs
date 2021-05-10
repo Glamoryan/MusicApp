@@ -37,6 +37,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlSarkilar = new System.Windows.Forms.Panel();
+            this.btnSarkiEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -110,7 +111,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
-            this.label7.Location = new System.Drawing.Point(1119, 23);
+            this.label7.Location = new System.Drawing.Point(1085, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 25);
             this.label7.TabIndex = 2;
@@ -123,11 +124,28 @@ namespace MusicApp.UI.AdminControls.Sections
             this.pnlSarkilar.Size = new System.Drawing.Size(1178, 499);
             this.pnlSarkilar.TabIndex = 3;
             // 
+            // btnSarkiEkle
+            // 
+            this.btnSarkiEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSarkiEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSarkiEkle.FlatAppearance.BorderSize = 0;
+            this.btnSarkiEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSarkiEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSarkiEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnSarkiEkle.Location = new System.Drawing.Point(22, 323);
+            this.btnSarkiEkle.Name = "btnSarkiEkle";
+            this.btnSarkiEkle.Size = new System.Drawing.Size(110, 73);
+            this.btnSarkiEkle.TabIndex = 4;
+            this.btnSarkiEkle.Text = "Şarkı Ekle";
+            this.btnSarkiEkle.UseVisualStyleBackColor = false;
+            this.btnSarkiEkle.Click += new System.EventHandler(this.btnSarkiEkle_Click);
+            // 
             // SarkilarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnSarkiEkle);
             this.Controls.Add(this.pnlSarkilar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -154,5 +172,6 @@ namespace MusicApp.UI.AdminControls.Sections
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlSarkilar;
+        private System.Windows.Forms.Button btnSarkiEkle;
     }
 }
