@@ -1,6 +1,7 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.AdminControls.Sections.Edit_Controls;
 using MusicApp.UI.AdminControls.Sections.List_Items;
 using MusicApp.UI.Tools;
 using System;
@@ -94,6 +95,12 @@ namespace MusicApp.UI.AdminControls.Sections
             }
         }
 
+        private void sanatciEkleEkraniGetir()
+        {
+            SanatciAdd sanatciAdd = new SanatciAdd();
+            Utilities.icerikDegistir(Parent, sanatciAdd);
+        }
+
         private void SanatcilarControl_Load(object sender, EventArgs e)
         {
             Utilities.scroolbarEkle(pnlSanatcilar);
@@ -102,7 +109,7 @@ namespace MusicApp.UI.AdminControls.Sections
 
         private void btnSanatciEkle_Click(object sender, EventArgs e)
         {
-
+            sanatciEkleEkraniGetir();
         }
     }
 }

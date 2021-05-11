@@ -85,7 +85,7 @@ namespace MusicApp.UI.AdminControls.Sections
             // 
             this.pnlSanatcilar.Location = new System.Drawing.Point(208, 50);
             this.pnlSanatcilar.Name = "pnlSanatcilar";
-            this.pnlSanatcilar.Size = new System.Drawing.Size(734, 506);
+            this.pnlSanatcilar.Size = new System.Drawing.Size(824, 506);
             this.pnlSanatcilar.TabIndex = 3;
             // 
             // btnSanatciEkle

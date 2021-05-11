@@ -69,40 +69,54 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             }                       
         }        
 
+        private bool albumuVarmi(int sanatciId)
+        {
+            List<AlbumDetay> albumleri = _albumDetayService.SanatciAlbumuGetir(sanatciId);
+            if (albumleri.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
         private void sarkiEkle()
         {
             if (!bosAlanVarmi())
             {
-                if (!sarkiVarmi())
+                if (albumuVarmi(Convert.ToInt32(cbxSanatci.SelectedValue)))
                 {
-                    Sarki sarki = new Sarki
+                    if (!sarkiVarmi())
                     {
-                        sanatciId = Convert.ToInt32(cbxSanatci.SelectedValue),
-                        sarkiAdi = tbxSarkiAdi.Text,
-                        sarkiDinlenmesi = 0,
-                        sarkiTarih = DateTime.Now,
-                        sarkiUlke = _sanatciService.SanatciGetir(Convert.ToInt32(cbxSanatci.SelectedValue)).ulkeAdi,
-                        sarkiYolu = _sarkiYolu
-                    };
+                        Sarki sarki = new Sarki
+                        {
+                            sanatciId = Convert.ToInt32(cbxSanatci.SelectedValue),
+                            sarkiAdi = tbxSarkiAdi.Text,
+                            sarkiDinlenmesi = 0,
+                            sarkiTarih = DateTime.Now,
+                            sarkiUlke = _sanatciService.SanatciGetir(Convert.ToInt32(cbxSanatci.SelectedValue)).ulkeAdi,
+                            sarkiYolu = _sarkiYolu
+                        };
 
-                    AlbumDetay sanatcininAlbumu = _albumDetayService.SanatciAlbumuGetir(Convert.ToInt32(cbxSanatci.SelectedValue))[0];
-                    AlbumDetay albumDetay = new AlbumDetay
-                    {
-                        albumId = sanatcininAlbumu.albumId,
-                        sanatciId = Convert.ToInt32(cbxSanatci.SelectedValue),
-                        sarkiId = _sarkiService.SarkiEkle(sarki).sarkiId,
-                        turId = sanatcininAlbumu.turId
-                    };
+                        AlbumDetay sanatcininAlbumu = _albumDetayService.SanatciAlbumuGetir(Convert.ToInt32(cbxSanatci.SelectedValue))[0];
+                        AlbumDetay albumDetay = new AlbumDetay
+                        {
+                            albumId = sanatcininAlbumu.albumId,
+                            sanatciId = Convert.ToInt32(cbxSanatci.SelectedValue),
+                            sarkiId = _sarkiService.SarkiEkle(sarki).sarkiId,
+                            turId = sanatcininAlbumu.turId
+                        };
 
-                    _albumDetayService.AlbumDetayEkle(albumDetay);
-                    
-                    MessageBox.Show("Şarkı eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _albumDetayService.AlbumDetayEkle(albumDetay);
 
-                    Controls.Clear();
-                    Controls.Add(new SarkilarControl());
+                        MessageBox.Show("Şarkı eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Controls.Clear();
+                        Controls.Add(new SarkilarControl());
+                    }
+                    else
+                        MessageBox.Show("Bu şarkı adında bir şarkı zaten mevcut", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                    MessageBox.Show("Bu şarkı adında bir şarkı zaten mevcut", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bu sanatçının albümü yok. Sanatçıya önce albüm ekleyin.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MessageBox.Show("Boş alan bırakılamaz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);

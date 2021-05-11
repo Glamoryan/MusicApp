@@ -75,7 +75,7 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
             this.btnDuzenle.FlatAppearance.BorderSize = 0;
             this.btnDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuzenle.Image = global::MusicApp.UI.Properties.Resources.edit;
-            this.btnDuzenle.Location = new System.Drawing.Point(603, 0);
+            this.btnDuzenle.Location = new System.Drawing.Point(650, 0);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(55, 56);
             this.btnDuzenle.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.Image = global::MusicApp.UI.Properties.Resources.admin_delete;
-            this.btnSil.Location = new System.Drawing.Point(664, 0);
+            this.btnSil.Location = new System.Drawing.Point(711, 0);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(55, 56);
             this.btnSil.TabIndex = 3;
@@ -104,7 +104,7 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
             this.Controls.Add(this.lblSanatciAdi);
             this.Controls.Add(this.lblSanatciId);
             this.Name = "SanatciItem";
-            this.Size = new System.Drawing.Size(734, 56);
+            this.Size = new System.Drawing.Size(824, 56);
             this.ResumeLayout(false);
             this.PerformLayout();
 
