@@ -34,9 +34,9 @@ namespace MusicApp.Business.Concrete
             _albumDetayDal.Delete(albumDetay);
         }
 
-        public AlbumDetay SanatciAlbumuGetir(int sanatciId)
+        public List<AlbumDetay> SanatciAlbumuGetir(int sanatciId)
         {
-            return _albumDetayDal.Get(x => x.sanatciId == sanatciId);
+            return _albumDetayDal.GetList(x => x.sanatciId == sanatciId);
         }
 
         public AlbumDetay SarkiAlbumuGetir(int sarkiId)

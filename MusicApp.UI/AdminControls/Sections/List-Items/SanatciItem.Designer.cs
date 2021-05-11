@@ -33,6 +33,7 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
             this.lblSanatciAdi = new System.Windows.Forms.Label();
             this.lblUlkeAdi = new System.Windows.Forms.Label();
             this.btnDuzenle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSanatciId
@@ -74,17 +75,30 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
             this.btnDuzenle.FlatAppearance.BorderSize = 0;
             this.btnDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuzenle.Image = global::MusicApp.UI.Properties.Resources.edit;
-            this.btnDuzenle.Location = new System.Drawing.Point(626, 0);
+            this.btnDuzenle.Location = new System.Drawing.Point(603, 0);
             this.btnDuzenle.Name = "btnDuzenle";
             this.btnDuzenle.Size = new System.Drawing.Size(55, 56);
             this.btnDuzenle.TabIndex = 3;
             this.btnDuzenle.UseVisualStyleBackColor = true;
+            // 
+            // btnSil
+            // 
+            this.btnSil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSil.FlatAppearance.BorderSize = 0;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Image = global::MusicApp.UI.Properties.Resources.admin_delete;
+            this.btnSil.Location = new System.Drawing.Point(664, 0);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(55, 56);
+            this.btnSil.TabIndex = 3;
+            this.btnSil.UseVisualStyleBackColor = true;
             // 
             // SanatciItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.lblUlkeAdi);
             this.Controls.Add(this.lblSanatciAdi);
@@ -102,5 +116,6 @@ namespace MusicApp.UI.AdminControls.Sections.List_Items
         public System.Windows.Forms.Label lblSanatciAdi;
         public System.Windows.Forms.Label lblUlkeAdi;
         public System.Windows.Forms.Button btnDuzenle;
+        public System.Windows.Forms.Button btnSil;
     }
 }

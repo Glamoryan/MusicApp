@@ -85,7 +85,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
                         sarkiYolu = _sarkiYolu
                     };
 
-                    AlbumDetay sanatcininAlbumu = _albumDetayService.SanatciAlbumuGetir(Convert.ToInt32(cbxSanatci.SelectedValue));
+                    AlbumDetay sanatcininAlbumu = _albumDetayService.SanatciAlbumuGetir(Convert.ToInt32(cbxSanatci.SelectedValue))[0];
                     AlbumDetay albumDetay = new AlbumDetay
                     {
                         albumId = sanatcininAlbumu.albumId,

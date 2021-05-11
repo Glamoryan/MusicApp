@@ -132,7 +132,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.btnSarkiEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSarkiEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSarkiEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
-            this.btnSarkiEkle.Location = new System.Drawing.Point(22, 323);
+            this.btnSarkiEkle.Location = new System.Drawing.Point(23, 302);
             this.btnSarkiEkle.Name = "btnSarkiEkle";
             this.btnSarkiEkle.Size = new System.Drawing.Size(110, 73);
             this.btnSarkiEkle.TabIndex = 4;

@@ -34,6 +34,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlSanatcilar = new System.Windows.Forms.Panel();
+            this.btnSanatciEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -87,11 +88,28 @@ namespace MusicApp.UI.AdminControls.Sections
             this.pnlSanatcilar.Size = new System.Drawing.Size(734, 506);
             this.pnlSanatcilar.TabIndex = 3;
             // 
+            // btnSanatciEkle
+            // 
+            this.btnSanatciEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnSanatciEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSanatciEkle.FlatAppearance.BorderSize = 0;
+            this.btnSanatciEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanatciEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSanatciEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnSanatciEkle.Location = new System.Drawing.Point(31, 311);
+            this.btnSanatciEkle.Name = "btnSanatciEkle";
+            this.btnSanatciEkle.Size = new System.Drawing.Size(110, 73);
+            this.btnSanatciEkle.TabIndex = 5;
+            this.btnSanatciEkle.Text = "Sanatçı Ekle";
+            this.btnSanatciEkle.UseVisualStyleBackColor = false;
+            this.btnSanatciEkle.Click += new System.EventHandler(this.btnSanatciEkle_Click);
+            // 
             // SanatcilarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnSanatciEkle);
             this.Controls.Add(this.pnlSanatcilar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -112,5 +130,6 @@ namespace MusicApp.UI.AdminControls.Sections
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlSanatcilar;
+        private System.Windows.Forms.Button btnSanatciEkle;
     }
 }
