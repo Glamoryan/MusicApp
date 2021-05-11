@@ -15,6 +15,10 @@ namespace MusicApp.UI.AdminControls.Sections
         private ISarkiService _sarkiService;
         private ISanatciService _sanatciService;
         private IAlbumDetayService _albumDetayService;
+        private ICalmaListesiService _calmaListesiService;
+        private IAlbumService _albumService;
+
+        private int _albumId;
 
         public SarkilarControl()
         {
@@ -22,6 +26,30 @@ namespace MusicApp.UI.AdminControls.Sections
             _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
             _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
+            _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
+            _albumService = InstanceFactory.GetInstance<IAlbumService>();
+        }
+
+        private bool albumSarkiSayisi1mi(Sarki sarki)
+        {
+            _albumId = _albumDetayService.TumAlbumDetaylariGetir().Find(x => x.sanatciId == sarki.sanatciId).albumId;
+            List<AlbumDetay> albumListe = _albumDetayService.AlbumDetayiGetir(_albumId);
+            if (albumListe.Count == 1)
+                return true;
+            else
+                return false;
+        }
+
+        private void calmaListelerindenSil(Sarki sarki)
+        {
+            List<CalmaListesi> calmaListeleri = _calmaListesiService.SarkiCalmaListeleriGetir(sarki.sarkiId);     
+            if (calmaListeleri.Count > 0)
+            {
+                foreach (CalmaListesi liste in calmaListeleri)
+                {
+                    _calmaListesiService.CalmaListesiSil(liste);
+                }
+            }            
         }
 
         private void sarkiSil(Sarki sarki)
@@ -29,14 +57,30 @@ namespace MusicApp.UI.AdminControls.Sections
             DialogResult sonuc = MessageBox.Show("Şarkı silinsin mi?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
             {
-                _albumDetayService.AlbumDetaySil(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId));
-                _sarkiService.SarkiSil(sarki);
+                if (albumSarkiSayisi1mi(sarki))
+                {
+                    sonuc = MessageBox.Show("Bu şarkı albümdeki son şarkı olduğu için albümde silinecektir! ", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if(sonuc == DialogResult.Yes)
+                    {
+                        _albumDetayService.AlbumDetaySil(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId));
+                        _albumService.AlbumSil(_albumService.AlbumGetir(_albumId));
+                        calmaListelerindenSil(sarki);
+                        _sarkiService.SarkiSil(sarki);
 
-                MessageBox.Show("Şarkı silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        MessageBox.Show("Şarkı ve Albüm silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                    }                    
+                }
+                else
+                {
+                    _albumDetayService.AlbumDetaySil(_albumDetayService.SarkiAlbumuGetir(sarki.sarkiId));
+                    _sarkiService.SarkiSil(sarki);
+                    calmaListelerindenSil(sarki);
+                    MessageBox.Show("Şarkı silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 Controls.Clear();
-                Controls.Add(new KullanicilarControl());
+                Controls.Add(new SarkilarControl());
             }
+
         }
 
         private void sarkiDuzenleEkraniGetir(Sarki sarki)

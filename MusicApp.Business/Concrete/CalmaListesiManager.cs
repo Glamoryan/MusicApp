@@ -38,6 +38,11 @@ namespace MusicApp.Business.Concrete
             return _calmaListesiDal.GetList(x => x.kullaniciId == kullaniciId);
         }
 
+        public List<CalmaListesi> SarkiCalmaListeleriGetir(int sarkiId)
+        {
+            return _calmaListesiDal.GetList(x => x.sarkiId == sarkiId);
+        }
+
         public List<CalmaListesi> TumCalmaListeleriniGetir()
         {
             return _calmaListesiDal.GetList();

@@ -6,6 +6,7 @@ namespace MusicApp.Business.Abstract
     public interface ICalmaListesiService
     {
         List<CalmaListesi> TumCalmaListeleriniGetir();
+        List<CalmaListesi> SarkiCalmaListeleriGetir(int sarkiId);
         CalmaListesi CalmaListesiGetir(int calmaListesiId);
         List<CalmaListesi> KullaniciCalmaListeleriniGetir(int kullaniciId);
         CalmaListesi CalmaListesiEkle(CalmaListesi calmaListesi);
