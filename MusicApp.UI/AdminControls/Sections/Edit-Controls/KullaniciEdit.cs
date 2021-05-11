@@ -71,6 +71,10 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
                 {
                     _kullaniciService.KullaniciGuncelle(_kullanici);
                     MessageBox.Show("Kullanıcı güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    KullanicilarControl kullanicilarControl = new KullanicilarControl();
+                    Controls.Clear();
+                    Controls.Add(kullanicilarControl);
                 }
                 else
                     MessageBox.Show("Bu kullanıcı adı daha önce alınmış!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);

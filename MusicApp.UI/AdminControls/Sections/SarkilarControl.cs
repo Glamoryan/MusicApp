@@ -39,6 +39,12 @@ namespace MusicApp.UI.AdminControls.Sections
             }
         }
 
+        private void sarkiDuzenleEkraniGetir(Sarki sarki)
+        {
+            SarkiEdit sarkiEdit = new SarkiEdit(sarki);
+            Utilities.icerikDegistir(Parent, sarkiEdit);
+        }
+
         private void sarkilariGetir()
         {
             pnlSarkilar.Controls.Clear();
@@ -58,6 +64,7 @@ namespace MusicApp.UI.AdminControls.Sections
                 sarkiItem.lblUlkeAdi.Text = sarki.sarkiUlke;
                 sarkiItem.lblTarih.Text = sarki.sarkiTarih.ToShortDateString();
                 sarkiItem.btnSarkiSil.Click += (s, e) => sarkiSil(sarki);
+                sarkiItem.btnDuzenle.Click += (s, e) => sarkiDuzenleEkraniGetir(sarki);
                 pnlSarkilar.Controls.Add(sarkiItem);
                 sayac++;
             }
