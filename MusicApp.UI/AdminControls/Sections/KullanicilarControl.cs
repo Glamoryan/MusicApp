@@ -14,12 +14,18 @@ namespace MusicApp.UI.AdminControls.Sections
     {
         private IKullaniciService _kullaniciService;
         private IRolService _rolService;
+        private IAboneService _aboneService;
+        private ICalmaListesiService _calmaListesiService;
+        private IKullaniciTakipService _kullaniciTakipService;
 
         public KullanicilarControl()
         {
             InitializeComponent();
             _kullaniciService = InstanceFactory.GetInstance<IKullaniciService>();
             _rolService = InstanceFactory.GetInstance<IRolService>();
+            _aboneService = InstanceFactory.GetInstance<IAboneService>();
+            _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
+            _kullaniciTakipService = InstanceFactory.GetInstance<IKullaniciTakipService>();
         }
      
         private void kullaniciDuzenleEkraniGetir(Kullanici kullanici)
@@ -29,11 +35,53 @@ namespace MusicApp.UI.AdminControls.Sections
             Utilities.icerikDegistir(Parent, kullaniciEdit);
         }
 
+        private void abonelerdenSil(Kullanici kullanici)
+        {
+            Abone abone = _aboneService.AboneyiGetir(kullanici.kullaniciId);
+            _aboneService.AboneSil(abone);
+        }
+
+        private void calmaListeleriniSil(Kullanici kullanici)
+        {
+            List<CalmaListesi> calmaListeleri = _calmaListesiService.KullaniciCalmaListeleriniGetir(kullanici.kullaniciId);
+            if(calmaListeleri.Count > 0)
+            {
+                foreach (CalmaListesi liste in calmaListeleri)
+                {
+                    _calmaListesiService.CalmaListesiSil(liste);
+                }
+            }
+        }
+
+        private void takiplesmeleriSil(Kullanici kullanici)
+        {
+            List<KullaniciTakip> takipEttikleri = _kullaniciTakipService.TakipEttikleriniGetir(kullanici.kullaniciId);            
+            if(takipEttikleri.Count > 0)
+            {
+                foreach (KullaniciTakip takip in takipEttikleri)
+                {
+                    _kullaniciTakipService.KullaniciTakipSil(takip);
+                }
+            }
+
+            List<KullaniciTakip> takipEdenler = _kullaniciTakipService.KullanicininTakipcileriniGetir(kullanici.kullaniciId);
+            if(takipEdenler.Count > 0)
+            {
+                foreach (KullaniciTakip takip in takipEdenler)
+                {
+                    _kullaniciTakipService.KullaniciTakipSil(takip);
+                }
+            }
+        }
+
         private void kullaniciSil(Kullanici kullanici)
         {
             DialogResult sonuc = MessageBox.Show("Kullanıcı silinsin mi?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(sonuc == DialogResult.Yes)
             {
+                abonelerdenSil(kullanici);
+                calmaListeleriniSil(kullanici);
+                takiplesmeleriSil(kullanici);
                 _kullaniciService.KullaniciSil(kullanici);
                 MessageBox.Show("Kullanıcı silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
