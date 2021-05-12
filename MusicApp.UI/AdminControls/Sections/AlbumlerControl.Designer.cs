@@ -37,6 +37,7 @@ namespace MusicApp.UI.AdminControls.Sections
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlAlbumler = new System.Windows.Forms.Panel();
+            this.btnAlbumEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -123,11 +124,28 @@ namespace MusicApp.UI.AdminControls.Sections
             this.pnlAlbumler.Size = new System.Drawing.Size(1143, 477);
             this.pnlAlbumler.TabIndex = 3;
             // 
+            // btnAlbumEkle
+            // 
+            this.btnAlbumEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnAlbumEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlbumEkle.FlatAppearance.BorderSize = 0;
+            this.btnAlbumEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlbumEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAlbumEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnAlbumEkle.Location = new System.Drawing.Point(26, 307);
+            this.btnAlbumEkle.Name = "btnAlbumEkle";
+            this.btnAlbumEkle.Size = new System.Drawing.Size(110, 73);
+            this.btnAlbumEkle.TabIndex = 6;
+            this.btnAlbumEkle.Text = "Albüm Ekle";
+            this.btnAlbumEkle.UseVisualStyleBackColor = false;
+            this.btnAlbumEkle.Click += new System.EventHandler(this.btnAlbumEkle_Click);
+            // 
             // AlbumlerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.btnAlbumEkle);
             this.Controls.Add(this.pnlAlbumler);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -154,5 +172,6 @@ namespace MusicApp.UI.AdminControls.Sections
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlAlbumler;
+        private System.Windows.Forms.Button btnAlbumEkle;
     }
 }

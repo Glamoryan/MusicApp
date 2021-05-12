@@ -37,7 +37,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.sarkiSecici = new System.Windows.Forms.OpenFileDialog();
             this.btnSarkiSec = new System.Windows.Forms.Button();
             this.lblYol = new System.Windows.Forms.Label();
-            this.btnEkle = new System.Windows.Forms.Button();
+            this.btnDuzenle = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -118,21 +118,21 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.lblYol.TabIndex = 10;
             this.lblYol.Text = "../";
             // 
-            // btnEkle
+            // btnDuzenle
             // 
-            this.btnEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
-            this.btnEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEkle.FlatAppearance.BorderSize = 0;
-            this.btnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEkle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
-            this.btnEkle.Location = new System.Drawing.Point(1145, 490);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(113, 42);
-            this.btnEkle.TabIndex = 16;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.UseVisualStyleBackColor = false;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            this.btnDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(50)))));
+            this.btnDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuzenle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
+            this.btnDuzenle.Location = new System.Drawing.Point(1145, 490);
+            this.btnDuzenle.Name = "btnDuzenle";
+            this.btnDuzenle.Size = new System.Drawing.Size(113, 42);
+            this.btnDuzenle.TabIndex = 16;
+            this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.UseVisualStyleBackColor = false;
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnIptal
             // 
@@ -155,7 +155,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(53)))), ((int)(((byte)(51)))));
-            this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.btnDuzenle);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.lblYol);
             this.Controls.Add(this.btnSarkiSec);
@@ -182,7 +182,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
         private System.Windows.Forms.OpenFileDialog sarkiSecici;
         private System.Windows.Forms.Button btnSarkiSec;
         private System.Windows.Forms.Label lblYol;
-        public System.Windows.Forms.Button btnEkle;
+        public System.Windows.Forms.Button btnDuzenle;
         public System.Windows.Forms.Button btnIptal;
     }
 }

@@ -89,7 +89,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
                         Sarki sarki = new Sarki
                         {
                             sanatciId = Convert.ToInt32(cbxSanatci.SelectedValue),
-                            sarkiAdi = tbxSarkiAdi.Text,
+                            sarkiAdi = tbxSarkiAdi.Text.Trim(),
                             sarkiDinlenmesi = 0,
                             sarkiTarih = DateTime.Now,
                             sarkiUlke = _sanatciService.SanatciGetir(Convert.ToInt32(cbxSanatci.SelectedValue)).ulkeAdi,

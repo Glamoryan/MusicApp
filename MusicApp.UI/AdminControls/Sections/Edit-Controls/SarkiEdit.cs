@@ -10,9 +10,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
     public partial class SarkiEdit : UserControl
     {
         private ISanatciService _sanatciService;
-        private ISarkiService _sarkiService;
-        private IAlbumDetayService _albumDetayService;
-        private ICalmaListesiService _calmaListesiService;
+        private ISarkiService _sarkiService;        
 
         private Sarki _sarki;
 
@@ -21,9 +19,7 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
             InitializeComponent();
 
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
-            _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
-            _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
-            _calmaListesiService = InstanceFactory.GetInstance<ICalmaListesiService>();
+            _sarkiService = InstanceFactory.GetInstance<ISarkiService>();            
 
             _sarki = sarki;
         }
@@ -83,18 +79,18 @@ namespace MusicApp.UI.AdminControls.Sections.Edit_Controls
         private void SarkiEdit_Load(object sender, EventArgs e)
         {
             bilgileriYazdir();
-        }
-
-        private void btnEkle_Click(object sender, EventArgs e)
-        {
-            sarkiGuncelle();
-        }
+        }        
 
         private void btnIptal_Click(object sender, EventArgs e)
         {
             SarkilarControl sarkilarControl = new SarkilarControl();
             Controls.Clear();
             Controls.Add(sarkilarControl);
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            sarkiGuncelle();
         }
     }
 }
