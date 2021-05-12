@@ -74,6 +74,12 @@ namespace MusicApp.UI.AdminControls.Sections
             }
         }
 
+        private void sanatciDuzenleEkraniGetir(Sanatci sanatci)
+        {
+            SanatciEdit sanatciEdit = new SanatciEdit(sanatci);
+            Utilities.icerikDegistir(Parent, sanatciEdit);
+        }
+
         private void sanatcilariGetir()
         {
             pnlSanatcilar.Controls.Clear();
@@ -90,6 +96,7 @@ namespace MusicApp.UI.AdminControls.Sections
                 sanatciItem.lblSanatciAdi.Text = sanatci.sanatciAdi;
                 sanatciItem.lblUlkeAdi.Text = sanatci.ulkeAdi;
                 sanatciItem.btnSil.Click += (s, e) => sanatciSil(sanatci);
+                sanatciItem.btnDuzenle.Click += (s, e) => sanatciDuzenleEkraniGetir(sanatci);
                 pnlSanatcilar.Controls.Add(sanatciItem);
                 sayac++;
             }
