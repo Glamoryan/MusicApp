@@ -35,6 +35,7 @@ namespace MusicApp.UI.AuthControls
             this.tbxSifre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGiris = new System.Windows.Forms.Button();
+            this.btnKayitOl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +94,7 @@ namespace MusicApp.UI.AuthControls
             this.btnGiris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiris.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGiris.ForeColor = System.Drawing.Color.White;
-            this.btnGiris.Location = new System.Drawing.Point(15, 348);
+            this.btnGiris.Location = new System.Drawing.Point(15, 322);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(294, 53);
             this.btnGiris.TabIndex = 3;
@@ -101,11 +102,26 @@ namespace MusicApp.UI.AuthControls
             this.btnGiris.UseVisualStyleBackColor = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
+            // btnKayitOl
+            // 
+            this.btnKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKayitOl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKayitOl.ForeColor = System.Drawing.Color.White;
+            this.btnKayitOl.Location = new System.Drawing.Point(15, 381);
+            this.btnKayitOl.Name = "btnKayitOl";
+            this.btnKayitOl.Size = new System.Drawing.Size(294, 53);
+            this.btnKayitOl.TabIndex = 3;
+            this.btnKayitOl.Text = "Kayıt Ol";
+            this.btnKayitOl.UseVisualStyleBackColor = true;
+            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
+            // 
             // GirisControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(34)))));
+            this.Controls.Add(this.btnKayitOl);
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.tbxSifre);
             this.Controls.Add(this.tbxKullaniciAdi);
@@ -127,5 +143,6 @@ namespace MusicApp.UI.AuthControls
         private System.Windows.Forms.Button btnGiris;
         public System.Windows.Forms.TextBox tbxKullaniciAdi;
         public System.Windows.Forms.TextBox tbxSifre;
+        private System.Windows.Forms.Button btnKayitOl;
     }
 }

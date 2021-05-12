@@ -1,6 +1,7 @@
 ﻿using MusicApp.Business.Abstract;
 using MusicApp.Business.Ninject;
 using MusicApp.Entities.Concrete;
+using MusicApp.UI.Tools;
 using System;
 using System.Windows.Forms;
 
@@ -83,6 +84,16 @@ namespace MusicApp.UI.AuthControls
             {
                 girisYap();
             }
+        }
+
+        private void kayitEkraniGetir()
+        {
+            Utilities.icerikDegistir(Parent, new KayitControl());
+        }
+
+        private void btnKayitOl_Click(object sender, EventArgs e)
+        {
+            kayitEkraniGetir();
         }
     }
 }
