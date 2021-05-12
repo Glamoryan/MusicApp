@@ -49,6 +49,7 @@ namespace MusicApp.UI.AdminControls.Sections
                 albumItem.lblAlbumTuru.Text = _turService.TurGetir(_albumDetayService.AlbumDetayiGetir(album.albumId)[0].turId).turAdi;
                 albumItem.lblSarkiSayisi.Text = _albumDetayService.AlbumDetayiGetir(album.albumId).Count.ToString();
                 albumItem.btnSil.Click += (s, e) => albumSil(album);
+                albumItem.btnDuzenle.Click += (s, e) => albumDuzenleEkraniGetir(album);
                 pnlAlbumler.Controls.Add(albumItem);
                 sayac++;
             }
@@ -93,6 +94,13 @@ namespace MusicApp.UI.AdminControls.Sections
                 Controls.Clear();
                 Controls.Add(new AlbumlerControl());
             }
+        }
+
+        private void albumDuzenleEkraniGetir(Album album)
+        {
+            AlbumEdit albumEdit = new AlbumEdit(album);
+
+            Utilities.icerikDegistir(Parent, albumEdit);
         }
 
         private void albumEkleEkraniGetir()
