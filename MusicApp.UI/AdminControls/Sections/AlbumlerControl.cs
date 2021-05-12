@@ -16,6 +16,9 @@ namespace MusicApp.UI.AdminControls.Sections
         private IAlbumDetayService _albumDetayService;
         private ISanatciService _sanatciService;
         private ITurService _turService;
+        private ISarkiService _sarkiService;
+
+        private List<int> _albumSarkiIdleri;
 
         public AlbumlerControl()
         {
@@ -24,6 +27,7 @@ namespace MusicApp.UI.AdminControls.Sections
             _albumDetayService = InstanceFactory.GetInstance<IAlbumDetayService>();
             _sanatciService = InstanceFactory.GetInstance<ISanatciService>();
             _turService = InstanceFactory.GetInstance<ITurService>();
+            _sarkiService = InstanceFactory.GetInstance<ISarkiService>();
         }
 
         private void albumleriGetir()
@@ -44,8 +48,50 @@ namespace MusicApp.UI.AdminControls.Sections
                 albumItem.lblAlbumTarih.Text = album.albumTarih.ToShortDateString();
                 albumItem.lblAlbumTuru.Text = _turService.TurGetir(_albumDetayService.AlbumDetayiGetir(album.albumId)[0].turId).turAdi;
                 albumItem.lblSarkiSayisi.Text = _albumDetayService.AlbumDetayiGetir(album.albumId).Count.ToString();
+                albumItem.btnSil.Click += (s, e) => albumSil(album);
                 pnlAlbumler.Controls.Add(albumItem);
                 sayac++;
+            }
+        }
+
+        private void albumDetayiSil(Album album)
+        {
+            List<AlbumDetay> albumDetaylari = _albumDetayService.AlbumDetayiGetir(album.albumId);
+            _albumSarkiIdleri = new List<int>();
+            if(albumDetaylari.Count > 0)
+            {
+                foreach (AlbumDetay albumDetay in albumDetaylari)
+                {
+                    _albumSarkiIdleri.Add(albumDetay.sarkiId);
+                    _albumDetayService.AlbumDetaySil(albumDetay);
+                }
+            }
+        }
+
+        private void sarkilariSil()
+        {
+            if (_albumSarkiIdleri.Count > 0)
+            {
+                foreach (int sarkiId in _albumSarkiIdleri)
+                {
+                    _sarkiService.SarkiSil(_sarkiService.SarkiGetir(sarkiId));
+                }
+            }
+        }
+
+        private void albumSil(Album album)
+        {
+            DialogResult sonuc = MessageBox.Show("Şarkılarıyla birlikte albüm silinsin mi?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                albumDetayiSil(album);
+                sarkilariSil();
+                _albumService.AlbumSil(album);
+
+                MessageBox.Show("Albüm silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Controls.Clear();
+                Controls.Add(new AlbumlerControl());
             }
         }
 
