@@ -5,6 +5,7 @@ namespace MusicApp.UI.Tools
 {
     public static class Utilities
     {
+        public static int? sarkiSayisi;
         public static void icerikDegistir(Control eklenecek,Control eklenen)
         {
             eklenecek.Controls.Clear();
